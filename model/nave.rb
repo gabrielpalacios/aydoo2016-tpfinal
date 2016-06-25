@@ -1,13 +1,14 @@
 class Nave
 
-
   attr_accessor :masa, :vida
-
 
   def initialize()
     @masa = 100
     @vida = 100
-
+    @situacion = Hash.new
+    #@situacion["nave"] =  [100 , 0] # vida, masa
+    array =  [100 , 0]
+    @situacion["nave"] = array
   end
 
   def calcularSiEstaVivo
@@ -25,7 +26,8 @@ class Nave
   end
 
   def calcularEfecto  objetoQueChoca
-    @vida -= 100
+    valorVidaMasa = @situacion["nave"]
+    @vida -= valorVidaMasa[0]
 
   end
 

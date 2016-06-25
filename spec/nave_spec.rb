@@ -35,5 +35,6 @@ describe 'Nave' do
     expect(nave1.vida).to eq 0
   end
 
+
   end
 
