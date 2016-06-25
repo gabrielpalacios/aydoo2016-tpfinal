@@ -19,4 +19,14 @@ class Nave
     return tieneVidaMasa
   end
 
+  def chocar objetoQueChoca
+    calcularEfecto objetoQueChoca
+
+  end
+
+  def calcularEfecto  objetoQueChoca
+    @vida -= 100
+
+  end
+
 end

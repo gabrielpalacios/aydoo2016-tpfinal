@@ -26,5 +26,14 @@ describe 'Nave' do
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
 
+  it 'nave 1 pierde 100 de vida al chocar con nave 2' do
+    nave1 = Nave.new
+    nave2 = Nave.new
+
+    nave1.chocar nave2
+
+    expect(nave1.vida).to eq 0
+  end
+
   end
 
