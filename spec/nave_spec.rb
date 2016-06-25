@@ -19,12 +19,12 @@ describe 'Nave' do
     expect(objeto.masa).to eq valorEsperadoVidaYMasa
   end
 
-  # it 'setear vida 0 a una nave y releer sus valores para saber q esta muerta' do
-  #   objeto = Nave.new
-  #   objeto.vida = 0
-  #   valorEsperadoVidaYMasa = false
-  #   expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
-  # end
+  it 'setear vida 0 a una nave y releer sus valores para saber q esta muerta' do
+    objeto = Nave.new
+    objeto.vida = 0
+    valorEsperadoVidaYMasa = false
+    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+  end
 
   end
 
