@@ -25,28 +25,33 @@ class Nave
     #guardo los 2 datos temporales previo al choque
     temporalVida = @vida
     temporalMasa = @masa
-    #esto calcula efecto al propio objeto (lado izquiedo)
-    self.calcularEfecto objetoQueChoca
-    #esto calcula efecto al otro objeto (lado derecho)
-    objetoQueChoca.vida = calcularEfectoVidaLadoDerecho objetoQueChoca, temporalVida
-    #objetoQueChoca.masa = calcularEfectoMasaLadoDerecho objetoQueChoca, temporalMasa
+
+    self.calcularEfecto objetoQueChoca, temporalVida , temporalMasa
 
   end
 
-  def calcularEfecto  objetoQueChoca
+  def calcularEfecto  objetoQueChoca, temporalVidaIzq , temporalMasIzq
     #ok valorVidaMasa = @situacion["Nave"]
-    valorVidaMasa = @situacion[objetoQueChoca.class.name]
 
-    @vida -= valorVidaMasa[0]
-    @masa -= valorVidaMasa[1]
+    #esto calcula efecto al propio objeto (lado izquiedo)
+    valorVidaMasaIzq = @situacion[objetoQueChoca.class.name]
+
+    @vida -= valorVidaMasaIzq[0]
+    @masa -= valorVidaMasaIzq[1]
+
+    #esto calcula efecto al otro objeto (lado derecho)
+    valorVidaMasaDer = @situacion["Nave"]
+    objetoQueChoca.vida -= valorVidaMasaDer[0]
+    objetoQueChoca.masa -= valorVidaMasaDer[1]
+
   end
 
-  def calcularEfectoVidaLadoDerecho (objetoLadoDerecho, temporalVidaIzquierda)
-    valorVidaMasa = @situacion["Nave"]
-
-    objetoLadoDerecho.vida -= valorVidaMasa[0]
-    objetoLadoDerecho.vida
-  end
+  # def calcularEfectoVidaLadoDerecho (objetoLadoDerecho, temporalVidaIzquierda)
+  #   valorVidaMasa = @situacion["Nave"]
+  #
+  #   objetoLadoDerecho.vida -= valorVidaMasa[0]
+  #   objetoLadoDerecho.vida
+  # end
 
   # def salidaNombre obj
   #   #aClass = obj.name if obj.type <= Module
