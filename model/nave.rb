@@ -8,7 +8,6 @@ class Nave
     @situacion = Hash.new
     #@situacion["nave"] =  [100 , 0] # vida, masa
     array =  [100 , 0]
-    #ok @situacion["Nave"] = array
     @situacion["Nave"] = array
 
   end
@@ -23,7 +22,14 @@ class Nave
   end
 
   def chocar objetoQueChoca
+    #guardo los 2 datos temporales previo al choque
+    temporalVida = @vida
+    temporalMasa = @masa
+    #esto calcula efecto al propio objeto (lado izquiedo)
     self.calcularEfecto objetoQueChoca
+    #esto calcula efecto al otro objeto (lado derecho)
+    objetoQueChoca.vida = calcularEfectoVidaLadoDerecho objetoQueChoca, temporalVida
+    #objetoQueChoca.masa = calcularEfectoMasaLadoDerecho objetoQueChoca, temporalMasa
 
   end
 
@@ -33,6 +39,13 @@ class Nave
 
     @vida -= valorVidaMasa[0]
     @masa -= valorVidaMasa[1]
+  end
+
+  def calcularEfectoVidaLadoDerecho (objetoLadoDerecho, temporalVidaIzquierda)
+    valorVidaMasa = @situacion["Nave"]
+
+    objetoLadoDerecho.vida -= valorVidaMasa[0]
+    objetoLadoDerecho.vida
   end
 
   # def salidaNombre obj

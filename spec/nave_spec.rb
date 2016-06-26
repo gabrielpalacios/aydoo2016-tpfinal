@@ -35,13 +35,13 @@ describe 'Nave' do
     expect(nave1.vida).to eq 0
   end
 
-  it 'nave 2 tmb pierde 100 de vida al chocar con nave 1, pero no esta contemplado' do
+  it 'nave 2 tmb pierde 100 de vida al chocar con nave 1' do
 
     nave1 = Nave.new
     #puts nave1.class.name # devuelve 'Nave'
     nave2 = Nave.new
     nave1.chocar nave2
-    expect(nave2.vida).to eq 100
+    expect(nave2.vida).to eq 0
   end
 
 
