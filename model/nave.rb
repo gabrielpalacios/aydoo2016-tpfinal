@@ -1,3 +1,6 @@
+require_relative '../model/efecto_disminuye_propia_masa'
+require_relative '../model/efecto_vida_destructivo'
+
 class Nave
 
   attr_accessor :masa, :vida
@@ -7,9 +10,13 @@ class Nave
     @vida = 100
     @situacion = Hash.new
     #@situacion["nave"] =  [100 , 0] # vida, masa
-    array =  [100 , 0]
-    @situacion["Nave"] = array
-    @situacion["Asteroide"] = [0 , -0.5]
+
+    #array =  [100 , 0]
+    #@situacion["Nave"] = array
+    #@situacion["Asteroide"] = [0 , -0.5]
+
+    @situacion["Nave"] = EfectoVidaDestructivo.new (100)
+    @situacion["Asteroide"] = EfectoDisminuyePropiaMasa.new (-0.5)
 
   end
 
@@ -32,6 +39,11 @@ class Nave
   end
 
   def calcularEfecto  objetoQueChoca, temporalVidaIzq , temporalMasaIzq
+
+
+    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
+
+=begin
     #ok valorVidaMasa = @situacion["Nave"]
 
     #caso nave-asteroide, la masa de la nave, tiene q bajar el valor de 50% de masa asteroide
@@ -67,6 +79,7 @@ class Nave
     valorVidaMasaDer = @situacion["Nave"]
     objetoQueChoca.vida -= valorVidaMasaDer[0]
     objetoQueChoca.masa -= valorVidaMasaDer[1]
+=end
 
   end
 

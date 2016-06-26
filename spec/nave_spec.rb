@@ -83,6 +83,31 @@ describe 'Nave' do
     expect(nave1.masa).to eq 50
   end
 
+  # it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
+  #
+  #   nave1 = Nave.new
+  #   asteroide2 = Asteroide.new
+  #   nave1.chocar asteroide2
+  #
+  #   expect(nave1.masa).to eq 50
+  #   expect(asteroide2.masa).to eq 110
+  # end
+
+  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
+
+    nave1 = Nave.new
+    asteroide2 = Asteroide.new
+
+    nave1Clon = nave1.clone
+    asteroide2Clon = asteroide2.clone
+
+    nave1.chocar asteroide2
+    asteroide2Clon.chocar nave1Clon
+
+    expect(asteroide2Clon.masa).to eq 110
+  end
+
+
 
 end
 

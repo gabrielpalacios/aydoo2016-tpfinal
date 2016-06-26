@@ -78,9 +78,13 @@ describe 'Asteroide' do
     asteroide1 = Asteroide.new
     nave2 = Nave.new
 
-    asteroide1.chocar nave2
+    naveClon = nave2.clone
+    asteroideClon = asteroide1.clone
 
-    expect(nave2.masa).to eq 50
+    asteroide1.chocar nave2
+    naveClon.chocar asteroideClon
+
+    expect(naveClon.masa).to eq 50
   end
 
 end
