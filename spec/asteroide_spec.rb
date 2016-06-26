@@ -50,36 +50,19 @@ describe 'Asteroide' do
 
   end
 
-=begin
-  it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
+  it 'asteroide 1 y 2 no pierden nada de vida ni masa mutuamente controlandolos' do
 
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+
+    asteroide1.chocar asteroide2
+
+    expect(asteroide1.vida).to eq 100
+    expect(asteroide2.vida).to eq 100
+    expect(asteroide1.masa).to eq 100
+    expect(asteroide2.masa).to eq 100
   end
 
-  it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
-  end
-
-  it 'naves 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
-
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
-    expect(nave1.masa).to eq 100
-    expect(nave2.masa).to eq 100
-  end
-
-=end
-  end
+end
 
