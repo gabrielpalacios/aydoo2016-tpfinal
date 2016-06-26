@@ -2,6 +2,7 @@ require 'rspec'
 require_relative '../model/Estrella'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
+require_relative '../model/misil'
 
 
 describe 'Estrella' do
@@ -70,16 +71,18 @@ describe 'Estrella' do
     expect(estrella1.masa).to eq 100
     expect(estrella2.masa).to eq 100
   end
-=begin
-  it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
+
+  it 'Estrella no le pasa nada al chocar con misil' do
 
     estrella1 = Estrella.new
-    asteroide2 = Asteroide.new
-    estrella1.chocar asteroide2
+    misil2 = Misil.new
+    estrella1.chocar misil2
 
-    expect(estrella1.masa).to eq 50
+    expect(estrella1.vida).to eq 100
+    expect(estrella1.masa).to eq 100
   end
 
+=begin
   # it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Estrella' do
   #
   #   estrella1 = Estrella.new
