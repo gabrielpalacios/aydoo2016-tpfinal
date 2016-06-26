@@ -38,16 +38,19 @@ describe 'Asteroide' do
 
     expect(asteroide1.vida).to eq 100
   end
-=begin
-  it 'nave 2 tmb pierde 100 de vida al chocar con nave 1' do
 
-    nave1 = Nave.new
-    #puts nave1.class.name # devuelve 'Nave'
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave2.vida).to eq 0
+  it 'asteroide 2 tmb no le pasa nada al chocar con asteroide 1' do
+
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+
+    asteroide1.chocar asteroide2
+
+    expect(asteroide2.vida).to eq 100
+
   end
 
+=begin
   it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
     nave1 = Nave.new
