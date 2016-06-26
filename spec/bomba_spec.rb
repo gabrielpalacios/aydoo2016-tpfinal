@@ -101,6 +101,8 @@ describe 'Bomba' do
     expect(bomba1.masa).to eq 100
   end
 
+  #tests mas completos, como casos reales
+
   it 'Bomba pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
 
     bomba1 = Bomba.new
@@ -134,6 +136,23 @@ describe 'Bomba' do
     expect(bomba1.masa).to eq 100
     expect(asteroide2Clon.vida).to eq 100
     expect(asteroide2Clon.masa).to eq 100
+  end
+
+  it 'choca bomba con nave, la bomba baja 100 de vida y la nave baja 50 de vida' do
+
+    bomba1 = Bomba.new
+    nave = Nave.new
+
+    bomba1Clon = bomba1.clone
+    naveClon = nave.clone
+
+    bomba1.chocar nave
+    naveClon.chocar bomba1Clon
+
+    expect(bomba1.vida).to eq 0
+    expect(bomba1.masa).to eq 100
+    expect(naveClon.vida).to eq 50
+    expect(naveClon.masa).to eq 100
   end
 
 
