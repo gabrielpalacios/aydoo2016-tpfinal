@@ -1,8 +1,7 @@
 require_relative '../model/efecto_disminuye_propia_masa'
 require_relative '../model/efecto_vida_destructivo'
-require_relative '../model/efecto_propia_vida'
 
-class Nave
+class Estrella
 
   attr_accessor :masa, :vida
 
@@ -18,7 +17,7 @@ class Nave
 
     @situacion["Nave"] = EfectoVidaDestructivo.new (100)
     @situacion["Asteroide"] = EfectoDisminuyePropiaMasa.new (-0.5)
-    @situacion["Estrella"] = EfectoPropiaVida.new (0)
+    @situacion["Estrella"] = EfectoDisminuyePropiaMasa.new (-0.5)
 
   end
 

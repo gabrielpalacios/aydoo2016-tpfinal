@@ -3,7 +3,8 @@ require_relative '../model/nave'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
 
-describe 'Nave' do
+
+describe 'Estrella' do
 
   it 'setear vida y masa 100 a una nave y releer sus valores' do
     objeto = Nave.new
@@ -106,15 +107,6 @@ describe 'Nave' do
     asteroide2Clon.chocar nave1Clon
 
     expect(asteroide2Clon.masa).to eq 110
-  end
-
-  it 'nave aumenta su vida a 200 porque gana la cantidad de vida de la estrella' do
-
-    nave1 = Nave.new
-    estrella2 = Estrella.new
-    nave1.chocar estrella2
-
-    expect(nave1.vida).to eq 200
   end
 
 
