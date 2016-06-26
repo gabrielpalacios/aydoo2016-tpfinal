@@ -1,5 +1,5 @@
 
-class EfectoDisminuyePropiaMasa
+class EfectoCambiaPropiaMasa
 
   def initialize(valor)
     @valor = valor

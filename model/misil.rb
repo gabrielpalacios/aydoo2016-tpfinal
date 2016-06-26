@@ -1,4 +1,4 @@
-require_relative '../model/efecto_disminuye_propia_masa'
+require_relative '../model/efecto_cambia_propia_masa'
 require_relative '../model/efecto_vida_destructivo'
 require_relative '../model/efecto_vida_fatalidad'
 require_relative '../model/efecto_no_pasa_nada'

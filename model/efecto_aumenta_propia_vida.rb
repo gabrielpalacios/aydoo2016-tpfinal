@@ -1,5 +1,5 @@
 
-class EfectoPropiaVida
+class EfectoAumentaPropiaVida
 
   def initialize(valor)
     @valor = valor

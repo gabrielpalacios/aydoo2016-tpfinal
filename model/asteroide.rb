@@ -1,3 +1,8 @@
+require_relative '../model/efecto_cambia_propia_masa'
+require_relative '../model/efecto_vida_destructivo'
+require_relative '../model/efecto_vida_fatalidad'
+require_relative '../model/efecto_no_pasa_nada'
+
 class Asteroide
 
   attr_accessor :masa, :vida
@@ -7,9 +12,16 @@ class Asteroide
     @vida = 100
     @situacion = Hash.new
     #@situacion["nave"] =  [100 , 0] # vida, masa
-    array =  [0 , 0]
-    @situacion["Asteroide"] = array
-    @situacion["Nave"] = [0 , -0.1]
+    #array =  [0 , 0]
+    #@situacion["Asteroide"] = array
+    #@situacion["Nave"] = [0 , -0.1]
+
+    @situacion["Nave"] = EfectoCambiaPropiaMasa.new (0.1)
+    @situacion["Asteroide"] = EfectoNoPasaNada.new (0)
+    @situacion["Estrella"] = EfectoNoPasaNada.new (0)
+
+    @situacion["Misil"] = EfectoNoPasaNada.new (0)
+    @situacion["Bomba"] = EfectoNoPasaNada.new (0)
 
   end
 
@@ -32,6 +44,10 @@ class Asteroide
   end
 
   def calcularEfecto  objetoQueChoca, temporalVidaIzq , temporalMasaIzq
+
+    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
+
+=begin
     #ok valorVidaMasa = @situacion["Nave"]
 
     #esto calcula efecto al propio objeto (lado izquiedo)
@@ -68,6 +84,7 @@ class Asteroide
 #comment            objetoQueChoca.vida -= valorVidaMasaDer[0]
 #comment                objetoQueChoca.masa -= valorVidaMasaDer[1]
 
+=end
   end
 
   # def calcularEfectoVidaLadoDerecho (objetoLadoDerecho, temporalVidaIzquierda)

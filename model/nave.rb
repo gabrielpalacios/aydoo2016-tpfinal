@@ -1,6 +1,6 @@
-require_relative '../model/efecto_disminuye_propia_masa'
+require_relative '../model/efecto_cambia_propia_masa'
 require_relative '../model/efecto_vida_destructivo'
-require_relative '../model/efecto_propia_vida'
+require_relative '../model/efecto_aumenta_propia_vida'
 
 class Nave
 
@@ -17,8 +17,11 @@ class Nave
     #@situacion["Asteroide"] = [0 , -0.5]
 
     @situacion["Nave"] = EfectoVidaDestructivo.new (100)
-    @situacion["Asteroide"] = EfectoDisminuyePropiaMasa.new (-0.5)
-    @situacion["Estrella"] = EfectoPropiaVida.new (0)
+    @situacion["Asteroide"] = EfectoCambiaPropiaMasa.new (-0.5)
+    @situacion["Estrella"] = EfectoAumentaPropiaVida.new (0)
+
+    @situacion["Misil"] = EfectoVidaDestructivo.new (80)
+    @situacion["Bomba"] =  EfectoVidaDestructivo.new (50)
 
   end
 
