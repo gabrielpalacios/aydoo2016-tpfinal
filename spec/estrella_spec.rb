@@ -49,15 +49,6 @@ describe 'Estrella' do
     expect(estrella2.vida).to eq 0
   end
 
-=begin
-  it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
-
-    estrella1 = Estrella.new
-    estrella2 = Estrella.new
-    estrella1.chocar estrella2
-    expect(estrella1.vida).to eq 0
-    expect(estrella2.vida).to eq 0
-  end
 
   it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
@@ -67,6 +58,7 @@ describe 'Estrella' do
     expect(estrella1.vida).to eq 0
     expect(estrella2.vida).to eq 0
   end
+
 
   it 'Estrellas 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
@@ -78,7 +70,7 @@ describe 'Estrella' do
     expect(estrella1.masa).to eq 100
     expect(estrella2.masa).to eq 100
   end
-
+=begin
   it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
 
     estrella1 = Estrella.new
