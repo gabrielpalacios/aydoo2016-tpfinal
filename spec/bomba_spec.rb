@@ -73,29 +73,35 @@ describe 'Bomba' do
   end
 
 
-=begin
 
-  it 'Bombas 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
+
+  it 'Bombas 1 y 2 de 300 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
     bomba1 = Bomba.new
+    bomba1.vida = 300
     bomba2 = Bomba.new
+    bomba2.vida = 300
     bomba1.chocar bomba2
-    expect(bomba1.vida).to eq 0
-    expect(bomba2.vida).to eq 0
+    expect(bomba1.vida).to eq 200
+    expect(bomba2.vida).to eq 200
+
     expect(bomba1.masa).to eq 100
     expect(bomba2.masa).to eq 100
-  end
+    end
 
-  it 'Bomba no le pasa nada al chocar con misil' do
+
+
+  it 'Bomba pierde 50 porciento de vida al chocar con misil' do
 
     bomba1 = Bomba.new
     misil2 = Misil.new
     bomba1.chocar misil2
 
-    expect(bomba1.vida).to eq 100
+    expect(bomba1.vida).to eq 50
     expect(bomba1.masa).to eq 100
   end
 
+=begin
   # it 'Bomba Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Bomba' do
   #
   #   bomba1 = Bomba.new
