@@ -119,7 +119,7 @@ describe 'Bomba' do
   end
 
 
-  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Bomba' do
+  it 'choca bomba con asteroide, la bomba queda en 0 vida y el asteroide sale ileso' do
 
     bomba1 = Bomba.new
     asteroide2 = Asteroide.new
@@ -130,7 +130,10 @@ describe 'Bomba' do
     bomba1.chocar asteroide2
     asteroide2Clon.chocar bomba1Clon
 
-    #expect(asteroide2Clon.masa).to eq 110
+    expect(bomba1.vida).to eq 0
+    expect(bomba1.masa).to eq 100
+    expect(asteroide2Clon.vida).to eq 100
+    expect(asteroide2Clon.masa).to eq 100
   end
 
 
