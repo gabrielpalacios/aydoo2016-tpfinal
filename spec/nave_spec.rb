@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative '../model/nave'
+require_relative '../model/asteroide'
 
 describe 'Nave' do
 
@@ -73,6 +74,15 @@ describe 'Nave' do
     expect(nave2.masa).to eq 100
   end
 
+  it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
 
+    nave1 = Nave.new
+    asteroide2 = Asteroide.new
+    nave1.chocar asteroide2
+
+    expect(nave1.masa).to eq 50
   end
+
+
+end
 

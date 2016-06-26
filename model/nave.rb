@@ -9,6 +9,7 @@ class Nave
     #@situacion["nave"] =  [100 , 0] # vida, masa
     array =  [100 , 0]
     @situacion["Nave"] = array
+    @situacion["Asteroide"] = [0 , -0.5]
 
   end
 
@@ -30,14 +31,37 @@ class Nave
 
   end
 
-  def calcularEfecto  objetoQueChoca, temporalVidaIzq , temporalMasIzq
+  def calcularEfecto  objetoQueChoca, temporalVidaIzq , temporalMasaIzq
     #ok valorVidaMasa = @situacion["Nave"]
 
+    #caso nave-asteroide, la masa de la nave, tiene q bajar el valor de 50% de masa asteroide
     #esto calcula efecto al propio objeto (lado izquiedo)
+    #ejemplo caso nave-asteroide
     valorVidaMasaIzq = @situacion[objetoQueChoca.class.name]
 
-    @vida -= valorVidaMasaIzq[0]
-    @masa -= valorVidaMasaIzq[1]
+
+    if (valorVidaMasaIzq[0] < 0) # los negativos son porcentaje de incremento
+      @vida *= valorVidaMasaIzq[0]
+    else
+      @vida -= valorVidaMasaIzq[0]
+    end
+
+    if (valorVidaMasaIzq[1] < 0)  # los negativos son porcentaje de incremento
+      @masa =  @masa +  objetoQueChoca.masa * valorVidaMasaIzq[1]
+    else
+      @masa -= valorVidaMasaIzq[1]
+    end
+
+
+
+
+    #anterior
+    #@vida -= valorVidaMasaIzq[0]
+    #@masa -= valorVidaMasaIzq[1]
+
+
+
+
 
     #esto calcula efecto al otro objeto (lado derecho)
     valorVidaMasaDer = @situacion["Nave"]

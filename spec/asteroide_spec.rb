@@ -64,7 +64,8 @@ describe 'Asteroide' do
     expect(asteroide2.masa).to eq 100
   end
 
-  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  al chocar con nave Version 1' do
+
+  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
     asteroide1 = Asteroide.new
     nave2 = Nave.new
 
@@ -73,6 +74,14 @@ describe 'Asteroide' do
     expect(asteroide1.masa).to eq 110
   end
 
+  it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
+    asteroide1 = Asteroide.new
+    nave2 = Nave.new
+
+    asteroide1.chocar nave2
+
+    expect(nave2.masa).to eq 50
+  end
 
 end
 
