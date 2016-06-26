@@ -29,7 +29,7 @@ describe 'Estrella' do
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
 
-=begin
+
   it 'Estrella 1 pierde 100 de vida al chocar con Estrella 2' do
     estrella1 = Estrella.new
     estrella2 = Estrella.new
@@ -39,6 +39,7 @@ describe 'Estrella' do
     expect(estrella1.vida).to eq 0
   end
 
+=begin
   it 'Estrella 2 tmb pierde 100 de vida al chocar con Estrella 1' do
 
     estrella1 = Estrella.new

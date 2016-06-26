@@ -1,5 +1,6 @@
 require_relative '../model/efecto_disminuye_propia_masa'
 require_relative '../model/efecto_vida_destructivo'
+require_relative '../model/efecto_vida_fatalidad'
 
 class Estrella
 
@@ -15,9 +16,9 @@ class Estrella
     #@situacion["Nave"] = array
     #@situacion["Asteroide"] = [0 , -0.5]
 
-    @situacion["Nave"] = EfectoVidaDestructivo.new (100)
-    @situacion["Asteroide"] = EfectoDisminuyePropiaMasa.new (-0.5)
-    @situacion["Estrella"] = EfectoDisminuyePropiaMasa.new (-0.5)
+    #@situacion["Nave"] = EfectoVidaDestructivo.new (100)
+    #@situacion["Asteroide"] = EfectoDisminuyePropiaMasa.new (-0.5)
+    @situacion["Estrella"] = EfectoVidaFatalidad.new (0)
 
   end
 
