@@ -28,7 +28,7 @@ class Nave
   def calcularEfecto  objetoQueChoca
     valorVidaMasa = @situacion["nave"]
     @vida -= valorVidaMasa[0]
-
+    @masa -= valorVidaMasa[1]
   end
 
 end
