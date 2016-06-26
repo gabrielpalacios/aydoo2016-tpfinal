@@ -28,17 +28,17 @@ describe 'Asteroide' do
     valorEsperadoVidaYMasa = false
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
-  
-=begin
-  it 'nave 1 pierde 100 de vida al chocar con nave 2' do
-    nave1 = Nave.new
-    nave2 = Nave.new
 
-    nave1.chocar nave2
 
-    expect(nave1.vida).to eq 0
+  it 'asteroide 1 no le pasa nada al chocar con asteroide 2' do
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+
+    asteroide1.chocar asteroide2
+
+    expect(asteroide1.vida).to eq 100
   end
-
+=begin
   it 'nave 2 tmb pierde 100 de vida al chocar con nave 1' do
 
     nave1 = Nave.new

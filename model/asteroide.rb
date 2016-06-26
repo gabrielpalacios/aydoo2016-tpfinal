@@ -7,7 +7,7 @@ class Asteroide
     @vida = 100
     @situacion = Hash.new
     #@situacion["nave"] =  [100 , 0] # vida, masa
-    array =  [100 , 0]
+    array =  [0 , 0]
     @situacion["Asteroide"] = array
 
   end
