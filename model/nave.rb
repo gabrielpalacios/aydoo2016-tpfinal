@@ -8,7 +8,9 @@ class Nave
     @situacion = Hash.new
     #@situacion["nave"] =  [100 , 0] # vida, masa
     array =  [100 , 0]
-    @situacion["nave"] = array
+    #ok @situacion["Nave"] = array
+    @situacion["Nave"] = array
+
   end
 
   def calcularSiEstaVivo
@@ -21,14 +23,22 @@ class Nave
   end
 
   def chocar objetoQueChoca
-    calcularEfecto objetoQueChoca
+    self.calcularEfecto objetoQueChoca
 
   end
 
   def calcularEfecto  objetoQueChoca
-    valorVidaMasa = @situacion["nave"]
+    #ok valorVidaMasa = @situacion["Nave"]
+    valorVidaMasa = @situacion[objetoQueChoca.class.name]
+
     @vida -= valorVidaMasa[0]
     @masa -= valorVidaMasa[1]
   end
+
+  # def salidaNombre obj
+  #   #aClass = obj.name if obj.type <= Module
+  #   #aClass
+  #   obj.class.name
+  # end
 
 end
