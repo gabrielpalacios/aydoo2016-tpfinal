@@ -101,16 +101,23 @@ describe 'Bomba' do
     expect(bomba1.masa).to eq 100
   end
 
-=begin
-  # it 'Bomba Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Bomba' do
-  #
-  #   bomba1 = Bomba.new
-  #   asteroide2 = Asteroide.new
-  #   bomba1.chocar asteroide2
-  #
-  #   expect(bomba1.masa).to eq 50
-  #   expect(asteroide2.masa).to eq 110
-  # end
+  it 'Bomba pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+
+    bomba1 = Bomba.new
+    misil2 = Misil.new
+    bomba1Clon = bomba1.clone
+    misil2Clon = misil2.clone
+
+    bomba1.chocar misil2
+    misil2Clon.chocar bomba1Clon
+
+
+    expect(bomba1.vida).to eq 50
+    expect(bomba1.masa).to eq 100
+    expect(misil2Clon.vida).to eq 100
+    expect(misil2Clon.masa).to eq 100
+  end
+
 
   it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Bomba' do
 
@@ -123,10 +130,10 @@ describe 'Bomba' do
     bomba1.chocar asteroide2
     asteroide2Clon.chocar bomba1Clon
 
-    expect(asteroide2Clon.masa).to eq 110
+    #expect(asteroide2Clon.masa).to eq 110
   end
 
 
-=end
+
 end
 
