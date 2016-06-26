@@ -1,13 +1,13 @@
 require 'rspec'
-require_relative '../model/nave'
+require_relative '../model/Estrella'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
 
 
 describe 'Estrella' do
 
-  it 'setear vida y masa 100 a una nave y releer sus valores' do
-    objeto = Nave.new
+  it 'setear vida y masa 100 a una Estrella y releer sus valores' do
+    objeto = Estrella.new
     objeto.vida = 100
     objeto.masa = 100
     valorEsperadoVidaYMasa = 100
@@ -15,101 +15,102 @@ describe 'Estrella' do
     expect(objeto.masa).to eq valorEsperadoVidaYMasa
   end
 
-  it 'setear vida y masa 100 a una nave y releer sus valores usando constructor' do
-    objeto = Nave.new
+  it 'setear vida y masa 100 a una Estrella y releer sus valores usando constructor' do
+    objeto = Estrella.new
     valorEsperadoVidaYMasa = 100
     expect(objeto.vida).to eq valorEsperadoVidaYMasa
     expect(objeto.masa).to eq valorEsperadoVidaYMasa
   end
 
-  it 'setear vida 0 a una nave y releer sus valores para saber q esta muerta' do
-    objeto = Nave.new
+  it 'setear vida 0 a una Estrella y releer sus valores para saber q esta muerta' do
+    objeto = Estrella.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
 
-  it 'nave 1 pierde 100 de vida al chocar con nave 2' do
-    nave1 = Nave.new
-    nave2 = Nave.new
+=begin
+  it 'Estrella 1 pierde 100 de vida al chocar con Estrella 2' do
+    estrella1 = Estrella.new
+    estrella2 = Estrella.new
 
-    nave1.chocar nave2
+    estrella1.chocar estrella2
 
-    expect(nave1.vida).to eq 0
+    expect(estrella1.vida).to eq 0
   end
 
-  it 'nave 2 tmb pierde 100 de vida al chocar con nave 1' do
+  it 'Estrella 2 tmb pierde 100 de vida al chocar con Estrella 1' do
 
-    nave1 = Nave.new
-    #puts nave1.class.name # devuelve 'Nave'
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave2.vida).to eq 0
+    estrella1 = Estrella.new
+    #puts estrella1.class.name # devuelve 'Estrella'
+    estrella2 = Estrella.new
+    estrella1.chocar estrella2
+    expect(estrella2.vida).to eq 0
   end
 
-  it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
+  it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
+    estrella1 = Estrella.new
+    estrella2 = Estrella.new
+    estrella1.chocar estrella2
+    expect(estrella1.vida).to eq 0
+    expect(estrella2.vida).to eq 0
   end
 
-  it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
+  it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
+    estrella1 = Estrella.new
+    estrella2 = Estrella.new
+    estrella1.chocar estrella2
+    expect(estrella1.vida).to eq 0
+    expect(estrella2.vida).to eq 0
   end
 
-  it 'naves 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
+  it 'Estrellas 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
-    nave1 = Nave.new
-    nave2 = Nave.new
-    nave1.chocar nave2
-    expect(nave1.vida).to eq 0
-    expect(nave2.vida).to eq 0
-    expect(nave1.masa).to eq 100
-    expect(nave2.masa).to eq 100
+    estrella1 = Estrella.new
+    estrella2 = Estrella.new
+    estrella1.chocar estrella2
+    expect(estrella1.vida).to eq 0
+    expect(estrella2.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(estrella2.masa).to eq 100
   end
 
-  it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
+  it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide' do
 
-    nave1 = Nave.new
+    estrella1 = Estrella.new
     asteroide2 = Asteroide.new
-    nave1.chocar asteroide2
+    estrella1.chocar asteroide2
 
-    expect(nave1.masa).to eq 50
+    expect(estrella1.masa).to eq 50
   end
 
-  # it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
+  # it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Estrella' do
   #
-  #   nave1 = Nave.new
+  #   estrella1 = Estrella.new
   #   asteroide2 = Asteroide.new
-  #   nave1.chocar asteroide2
+  #   estrella1.chocar asteroide2
   #
-  #   expect(nave1.masa).to eq 50
+  #   expect(estrella1.masa).to eq 50
   #   expect(asteroide2.masa).to eq 110
   # end
 
-  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
+  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Estrella' do
 
-    nave1 = Nave.new
+    estrella1 = Estrella.new
     asteroide2 = Asteroide.new
 
-    nave1Clon = nave1.clone
+    estrella1Clon = estrella1.clone
     asteroide2Clon = asteroide2.clone
 
-    nave1.chocar asteroide2
-    asteroide2Clon.chocar nave1Clon
+    estrella1.chocar asteroide2
+    asteroide2Clon.chocar estrella1Clon
 
     expect(asteroide2Clon.masa).to eq 110
   end
 
 
-
+=end
 end
 
