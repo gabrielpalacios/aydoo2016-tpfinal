@@ -11,21 +11,25 @@ describe 'Asteroide' do
     expect(objeto.vida).to eq valorEsperadoVidaYMasa
     expect(objeto.masa).to eq valorEsperadoVidaYMasa
   end
-=begin
-  it 'setear vida y masa 100 a una nave y releer sus valores usando constructor' do
-    objeto = Nave.new
+
+
+  it 'setear vida y masa 100 a un asteroide y releer sus valores usando constructor' do
+    objeto = Asteroide.new
     valorEsperadoVidaYMasa = 100
     expect(objeto.vida).to eq valorEsperadoVidaYMasa
     expect(objeto.masa).to eq valorEsperadoVidaYMasa
   end
 
-  it 'setear vida 0 a una nave y releer sus valores para saber q esta muerta' do
-    objeto = Nave.new
+
+
+  it 'setear vida 0 a uun asteroidee y releer sus valores para saber q esta muerto' do
+    objeto = Asteroide.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
-
+  
+=begin
   it 'nave 1 pierde 100 de vida al chocar con nave 2' do
     nave1 = Nave.new
     nave2 = Nave.new
