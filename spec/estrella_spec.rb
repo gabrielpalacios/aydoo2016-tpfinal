@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../model/Estrella'
+require_relative '../model/nave'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
 require_relative '../model/misil'
