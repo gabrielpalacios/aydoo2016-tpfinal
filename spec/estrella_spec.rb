@@ -39,7 +39,7 @@ describe 'Estrella' do
     expect(estrella1.vida).to eq 0
   end
 
-=begin
+
   it 'Estrella 2 tmb pierde 100 de vida al chocar con Estrella 1' do
 
     estrella1 = Estrella.new
@@ -49,6 +49,7 @@ describe 'Estrella' do
     expect(estrella2.vida).to eq 0
   end
 
+=begin
   it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
     estrella1 = Estrella.new
