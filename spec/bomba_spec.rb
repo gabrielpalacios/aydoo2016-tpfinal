@@ -3,7 +3,7 @@ require_relative '../model/nave'
 require_relative '../model/asteroide'
 require_relative '../model/bomba'
 require_relative '../model/misil'
-require_relative '../model/bomba'
+require_relative '../model/estrella'
 
 
 describe 'Bomba' do
@@ -155,6 +155,22 @@ describe 'Bomba' do
     expect(naveClon.masa).to eq 100
   end
 
+  it 'choca bomba con estrella, la bomba baja 100 de vida y la estrella baja a 0 de vida' do
+
+    bomba1 = Bomba.new
+    estrella = Estrella.new
+
+    bomba1Clon = bomba1.clone
+    estrellaClon = estrella.clone
+
+    bomba1.chocar estrella
+    estrellaClon.chocar bomba1Clon
+
+    expect(bomba1.vida).to eq 0
+    expect(bomba1.masa).to eq 100
+    expect(estrellaClon.vida).to eq 0
+    expect(estrellaClon.masa).to eq 100
+  end
 
 
 end
