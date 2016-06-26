@@ -41,7 +41,7 @@ describe 'Bomba' do
     expect(bomba1.vida).to eq 0
   end
 
-=begin
+
   it 'Bomba 2 tmb pierde 100 de vida al chocar con Bomba 1' do
 
     bomba1 = Bomba.new
@@ -61,6 +61,19 @@ describe 'Bomba' do
     expect(bomba2.vida).to eq 0
   end
 
+  it 'Bombas 1 y 2 nuevas con 300 de vida pierden 100 de vida cada una mutuamente' do
+
+    bomba1 = Bomba.new
+    bomba1.vida = 300
+    bomba2 = Bomba.new
+    bomba2.vida = 300
+    bomba1.chocar bomba2
+    expect(bomba1.vida).to eq 200
+    expect(bomba2.vida).to eq 200
+  end
+
+
+=begin
 
   it 'Bombas 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
