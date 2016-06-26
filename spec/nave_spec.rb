@@ -53,6 +53,26 @@ describe 'Nave' do
     expect(nave2.vida).to eq 0
   end
 
+  it 'naves 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
+
+    nave1 = Nave.new
+    nave2 = Nave.new
+    nave1.chocar nave2
+    expect(nave1.vida).to eq 0
+    expect(nave2.vida).to eq 0
+  end
+
+  it 'naves 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
+
+    nave1 = Nave.new
+    nave2 = Nave.new
+    nave1.chocar nave2
+    expect(nave1.vida).to eq 0
+    expect(nave2.vida).to eq 0
+    expect(nave1.masa).to eq 100
+    expect(nave2.masa).to eq 100
+  end
+
 
   end
 
