@@ -148,7 +148,7 @@ describe 'Estrella' do
     expect(misil2Clon.masa).to eq 100
   end
 
-=begin
+
   it 'choca estrella con asteroide, la estrella queda en 0 vida y el asteroide sale ileso' do
 
     estrella1 = Estrella.new
@@ -165,7 +165,7 @@ describe 'Estrella' do
     expect(asteroide2Clon.vida).to eq 100
     expect(asteroide2Clon.masa).to eq 100
   end
-
+=begin
   it 'choca estrella con nave, la estrella baja 100 de vida y la nave baja 50 de vida' do
 
     estrella1 = Estrella.new
