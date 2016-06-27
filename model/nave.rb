@@ -1,12 +1,15 @@
 require_relative '../model/efecto_cambia_propia_masa'
 require_relative '../model/efecto_vida_destructivo'
 require_relative '../model/efecto_aumenta_propia_vida'
+require_relative '../model/elemento_del_espacio'
 
-class Nave
 
-  attr_accessor :masa, :vida
+class Nave < ElementoDelEspacio
 
-  def initialize()
+  #attr_accessor :masa, :vida
+
+
+def initialize()
     @masa = 100
     @vida = 100
     @situacion = Hash.new
@@ -25,14 +28,14 @@ class Nave
 
   end
 
-  def calcularSiEstaVivo
-
-    tieneVidaMasa = true
-    if (@masa <= 0 || @vida <= 0)
-      tieneVidaMasa = false
-    end
-    return tieneVidaMasa
-  end
+  # def calcularSiEstaVivo
+  #
+  #   tieneVidaMasa = true
+  #   if (@masa <= 0 || @vida <= 0)
+  #     tieneVidaMasa = false
+  #   end
+  #   return tieneVidaMasa
+  # end
 
   def chocar objetoQueChoca
     #guardo los 2 datos temporales previo al choque

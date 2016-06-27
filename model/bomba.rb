@@ -3,10 +3,12 @@ require_relative '../model/efecto_vida_destructivo'
 require_relative '../model/efecto_vida_fatalidad'
 require_relative '../model/efecto_no_pasa_nada'
 require_relative '../model/efecto_vida_media_fatalidad'
+require_relative '../model/elemento_del_espacio'
 
-class Bomba
 
-  attr_accessor :masa, :vida
+class Bomba < ElementoDelEspacio
+
+  #attr_accessor :masa, :vida
 
   def initialize()
     @masa = 100
@@ -26,14 +28,14 @@ class Bomba
 
   end
 
-  def calcularSiEstaVivo
-
-    tieneVidaMasa = true
-    if (@masa <= 0 || @vida <= 0)
-      tieneVidaMasa = false
-    end
-    return tieneVidaMasa
-  end
+  # def calcularSiEstaVivo
+  #
+  #   tieneVidaMasa = true
+  #   if (@masa <= 0 || @vida <= 0)
+  #     tieneVidaMasa = false
+  #   end
+  #   return tieneVidaMasa
+  # end
 
   def chocar objetoQueChoca
     #guardo los 2 datos temporales previo al choque
