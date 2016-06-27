@@ -157,8 +157,8 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     expect(bomba2Clon.vida).to eq 0
     expect(bomba2Clon.masa).to eq 100
   end
-=begin
-  it 'Nave pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+
+  it 'Nave pierde 80 de vida al chocar con misil y misil pierde 100 de vida' do
 
     nave1 = Nave.new
     misil2 = Misil.new
@@ -169,12 +169,12 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     misil2Clon.chocar nave1Clon
 
 
-    expect(nave1.vida).to eq 50
+    expect(nave1.vida).to eq 20
     expect(nave1.masa).to eq 100
-    expect(misil2Clon.vida).to eq 100
+    expect(misil2Clon.vida).to eq 0
     expect(misil2Clon.masa).to eq 100
   end
-
+=begin
 
   it 'choca nave con asteroide, la nave queda en 0 vida y el asteroide sale ileso' do
 
