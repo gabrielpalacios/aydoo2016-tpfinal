@@ -127,25 +127,9 @@ describe 'Asteroide' do
     expect(misil2Clon.masa).to eq 100
   end
 
-=begin
-  it 'choca asteroide con asteroide, la asteroide queda en 0 vida y el asteroide sale ileso' do
 
-    asteroide1 = Asteroide.new
-    asteroide2 = Asteroide.new
 
-    asteroide1Clon = asteroide1.clone
-    asteroide2Clon = asteroide2.clone
-
-    asteroide1.chocar asteroide2
-    asteroide2Clon.chocar asteroide1Clon
-
-    expect(asteroide1.vida).to eq 0
-    expect(asteroide1.masa).to eq 100
-    expect(asteroide2Clon.vida).to eq 100
-    expect(asteroide2Clon.masa).to eq 100
-  end
-
-  it 'choca asteroide con nave, la asteroide baja 100 de vida y la nave baja 50 de vida' do
+  it 'choca asteroide con nave, el asteroide Aumenta su masa en un valor igual al 10 porciento de la nave y la nave baja 50 porciento de masa respecto a asteroide' do
 
     asteroide1 = Asteroide.new
     nave = Nave.new
@@ -156,12 +140,12 @@ describe 'Asteroide' do
     asteroide1.chocar nave
     naveClon.chocar asteroide1Clon
 
-    expect(asteroide1.vida).to eq 0
-    expect(asteroide1.masa).to eq 100
-    expect(naveClon.vida).to eq 50
-    expect(naveClon.masa).to eq 100
+    expect(asteroide1.vida).to eq 100
+    expect(asteroide1.masa).to eq 110
+    expect(naveClon.vida).to eq 100
+    expect(naveClon.masa).to eq 50
   end
-
+=begin
   it 'choca asteroide con estrella, la asteroide baja 100 de vida y la estrella baja a 0 de vida' do
 
     asteroide1 = Asteroide.new
