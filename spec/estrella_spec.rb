@@ -108,8 +108,97 @@ describe 'Estrella' do
 
     expect(asteroide2Clon.masa).to eq 110
   end
+=end
+
+  #tests mas completos, como casos reales
+
+  it 'Estrellas 1 y 2 de 300 de vida pierden toda su vida simultaneamente' do
+
+    estrella1 = Estrella.new
+    estrella1.vida = 300
+    estrella2 = Estrella.new
+    estrella2.vida = 300
+    estrella1Clon = estrella1.clone
+    estrella2Clon = estrella2.clone
+
+    estrella1.chocar estrella2
+    estrella2Clon.chocar estrella1Clon
 
 
+    expect(estrella1.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(estrella2Clon.vida).to eq 0
+    expect(estrella2Clon.masa).to eq 100
+  end
+=begin
+  it 'Estrella pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+
+    estrella1 = Estrella.new
+    misil2 = Misil.new
+    estrella1Clon = estrella1.clone
+    misil2Clon = misil2.clone
+
+    estrella1.chocar misil2
+    misil2Clon.chocar estrella1Clon
+
+
+    expect(estrella1.vida).to eq 50
+    expect(estrella1.masa).to eq 100
+    expect(misil2Clon.vida).to eq 100
+    expect(misil2Clon.masa).to eq 100
+  end
+
+
+  it 'choca estrella con asteroide, la estrella queda en 0 vida y el asteroide sale ileso' do
+
+    estrella1 = Estrella.new
+    asteroide2 = Asteroide.new
+
+    estrella1Clon = estrella1.clone
+    asteroide2Clon = asteroide2.clone
+
+    estrella1.chocar asteroide2
+    asteroide2Clon.chocar estrella1Clon
+
+    expect(estrella1.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(asteroide2Clon.vida).to eq 100
+    expect(asteroide2Clon.masa).to eq 100
+  end
+
+  it 'choca estrella con nave, la estrella baja 100 de vida y la nave baja 50 de vida' do
+
+    estrella1 = Estrella.new
+    nave = Nave.new
+
+    estrella1Clon = estrella1.clone
+    naveClon = nave.clone
+
+    estrella1.chocar nave
+    naveClon.chocar estrella1Clon
+
+    expect(estrella1.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(naveClon.vida).to eq 50
+    expect(naveClon.masa).to eq 100
+  end
+
+  it 'choca estrella con estrella, la estrella baja 100 de vida y la estrella baja a 0 de vida' do
+
+    estrella1 = Estrella.new
+    estrella = Estrella.new
+
+    estrella1Clon = estrella1.clone
+    estrellaClon = estrella.clone
+
+    estrella1.chocar estrella
+    estrellaClon.chocar estrella1Clon
+
+    expect(estrella1.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(estrellaClon.vida).to eq 0
+    expect(estrellaClon.masa).to eq 100
+    end
 =end
 end
 
