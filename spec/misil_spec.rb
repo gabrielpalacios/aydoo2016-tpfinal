@@ -62,9 +62,9 @@ describe 'Misil' do
     expect(misil2.vida).to eq 0
   end
 
-=begin
 
-  it 'Misils 1 y 2 nuevas con 300 de vida pierden 100 de vida cada una mutuamente' do
+
+  it 'Misiles 1 y 2 nuevos con 300 de vida pierden 100 de vida cada una mutuamente' do
 
     misil1 = Misil.new
     misil1.vida = 300
@@ -74,7 +74,7 @@ describe 'Misil' do
     expect(misil1.vida).to eq 200
     expect(misil2.vida).to eq 200
   end
-
+=begin
 
   it 'Misils 1 y 2 de 300 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
