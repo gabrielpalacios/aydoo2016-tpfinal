@@ -104,6 +104,23 @@ describe 'Bomba' do
 
   #tests mas completos, como casos reales
 
+  it 'Bombas 1 y 2 de 300 pierden 100 de vida mutuamente' do
+
+    bomba1 = Bomba.new
+    bomba2 = Bomba.new
+    bomba1Clon = bomba1.clone
+    bomba2Clon = bomba2.clone
+
+    bomba1.chocar bomba2
+    bomba2Clon.chocar bomba1Clon
+
+
+    expect(bomba1.vida).to eq 0
+    expect(bomba1.masa).to eq 100
+    expect(bomba2Clon.vida).to eq 0
+    expect(bomba2Clon.masa).to eq 100
+  end
+
   it 'Bomba pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
 
     bomba1 = Bomba.new

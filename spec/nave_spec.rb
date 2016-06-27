@@ -121,6 +121,100 @@ describe 'Nave' do
   end
 
 
+  #tests mas completos, como casos reales
+
+it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
+
+    nave1 = Nave.new
+    nave2 = Nave.new
+    nave1Clon = nave1.clone
+    nave2Clon = nave2.clone
+
+    nave1.chocar nave2
+    nave2Clon.chocar nave1Clon
+
+
+    expect(nave1.vida).to eq 0
+    expect(nave1.masa).to eq 100
+    expect(nave2Clon.vida).to eq 0
+    expect(nave2Clon.masa).to eq 100
+  end
+
+
+ it 'Nave pierde 50 de vida al chocar con bomba y bomba pierde 100 de vida' do
+
+    nave1 = Nave.new
+    bomba2 = Bomba.new
+    nave1Clon = nave1.clone
+    bomba2Clon = bomba2.clone
+
+    nave1.chocar bomba2
+    bomba2Clon.chocar nave1Clon
+
+
+    expect(nave1.vida).to eq 50
+    expect(nave1.masa).to eq 100
+    expect(bomba2Clon.vida).to eq 0
+    expect(bomba2Clon.masa).to eq 100
+  end
+=begin
+  it 'Nave pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+
+    nave1 = Nave.new
+    misil2 = Misil.new
+    nave1Clon = nave1.clone
+    misil2Clon = misil2.clone
+
+    nave1.chocar misil2
+    misil2Clon.chocar nave1Clon
+
+
+    expect(nave1.vida).to eq 50
+    expect(nave1.masa).to eq 100
+    expect(misil2Clon.vida).to eq 100
+    expect(misil2Clon.masa).to eq 100
+  end
+
+
+  it 'choca nave con asteroide, la nave queda en 0 vida y el asteroide sale ileso' do
+
+    nave1 = Nave.new
+    asteroide2 = Asteroide.new
+
+    nave1Clon = nave1.clone
+    asteroide2Clon = asteroide2.clone
+
+    nave1.chocar asteroide2
+    asteroide2Clon.chocar nave1Clon
+
+    expect(nave1.vida).to eq 0
+    expect(nave1.masa).to eq 100
+    expect(asteroide2Clon.vida).to eq 100
+    expect(asteroide2Clon.masa).to eq 100
+  end
+
+
+  it 'choca nave con estrella, la nave baja 100 de vida y la estrella baja a 0 de vida' do
+
+    nave1 = Nave.new
+    estrella = Estrella.new
+
+    nave1Clon = nave1.clone
+    estrellaClon = estrella.clone
+
+    nave1.chocar estrella
+    estrellaClon.chocar nave1Clon
+
+    expect(nave1.vida).to eq 0
+    expect(nave1.masa).to eq 100
+    expect(estrellaClon.vida).to eq 0
+    expect(estrellaClon.masa).to eq 100
+  end
+
+
+=end
+
+
 
 end
 
