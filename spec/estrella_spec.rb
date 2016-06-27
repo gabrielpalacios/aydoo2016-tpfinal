@@ -199,7 +199,25 @@ describe 'Estrella' do
     expect(estrella1.masa).to eq 100
     expect(bombaClon.vida).to eq 0
     expect(bombaClon.masa).to eq 100
-    end
+  end
+
+  it 'choca estrella con bomba de 300 de vida, la estrella baja a 0 de vida y la bomba baja 100 de vida' do
+
+    estrella1 = Estrella.new
+    bomba = Bomba.new
+    bomba.vida = 300
+
+    estrella1Clon = estrella1.clone
+    bombaClon = bomba.clone
+
+    estrella1.chocar bomba
+    bombaClon.chocar estrella1Clon
+
+    expect(estrella1.vida).to eq 0
+    expect(estrella1.masa).to eq 100
+    expect(bombaClon.vida).to eq 200
+    expect(bombaClon.masa).to eq 100
+  end
 
 end
 
