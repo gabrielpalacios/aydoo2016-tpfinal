@@ -165,8 +165,9 @@ describe 'Estrella' do
     expect(asteroide2Clon.vida).to eq 100
     expect(asteroide2Clon.masa).to eq 100
   end
-=begin
-  it 'choca estrella con nave, la estrella baja 100 de vida y la nave baja 50 de vida' do
+
+
+  it 'choca estrella con nave, la estrella baja a 0 de vida y la nave suma toda la vida de la estrella' do
 
     estrella1 = Estrella.new
     nave = Nave.new
@@ -179,10 +180,10 @@ describe 'Estrella' do
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(naveClon.vida).to eq 50
+    expect(naveClon.vida).to eq 200
     expect(naveClon.masa).to eq 100
   end
-
+=begin
   it 'choca estrella con bomba, la estrella baja 100 de vida y la estrella baja a 0 de vida' do
 
     estrella1 = Estrella.new
