@@ -8,6 +8,7 @@ require_relative '../model/bomba'
 
 describe 'Asteroide' do
 
+
   it 'setear vida y masa 100 a un asteroide y releer sus valores' do
     objeto = Asteroide.new
     objeto.vida = 100
@@ -30,6 +31,21 @@ describe 'Asteroide' do
   it 'setear vida 0 a uun asteroidee y releer sus valores para saber q esta muerto' do
     objeto = Asteroide.new
     objeto.vida = 0
+    valorEsperadoVidaYMasa = false
+    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+  end
+
+  it 'setear vida 200 a uun asteroidee y releer sus valores para saber q esta vivo' do
+    objeto = Asteroide.new
+    objeto.vida = 200
+    valorEsperadoVidaYMasa = true
+    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+  end
+
+  it 'setear vida 50 y masa 0 a un Asteroide y releer sus valores para saber q esta muerto' do
+    objeto = Asteroide.new
+    objeto.vida = 50
+    objeto.masa = 0
     valorEsperadoVidaYMasa = false
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end

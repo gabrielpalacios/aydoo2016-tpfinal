@@ -32,6 +32,21 @@ describe 'Bomba' do
     expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
   end
 
+  it 'setear vida 200 a una Bomba y releer sus valores para saber q esta viva' do
+    objeto = Bomba.new
+    objeto.vida = 200
+    valorEsperadoVidaYMasa = true
+    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+  end
+
+  it 'setear vida 50 y masa 0 a una Bomba y releer sus valores para saber q esta muerta' do
+    objeto = Bomba.new
+    objeto.vida = 50
+    objeto.masa = 0
+    valorEsperadoVidaYMasa = false
+    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+  end
+
 
   it 'Bomba 1 pierde 100 de vida al chocar con Bomba 2' do
     bomba1 = Bomba.new
