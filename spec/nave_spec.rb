@@ -174,9 +174,8 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     expect(misil2Clon.vida).to eq 0
     expect(misil2Clon.masa).to eq 100
   end
-=begin
 
-  it 'choca nave con asteroide, la nave queda en 0 vida y el asteroide sale ileso' do
+  it 'choca nave con asteroide, la nave queda en 100 vida y 50 masa y el asteroide gana 10 porciento de masa' do
 
     nave1 = Nave.new
     asteroide2 = Asteroide.new
@@ -187,11 +186,12 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     nave1.chocar asteroide2
     asteroide2Clon.chocar nave1Clon
 
-    expect(nave1.vida).to eq 0
-    expect(nave1.masa).to eq 100
+    expect(nave1.vida).to eq 100
+    expect(nave1.masa).to eq 50
     expect(asteroide2Clon.vida).to eq 100
-    expect(asteroide2Clon.masa).to eq 100
+    expect(asteroide2Clon.masa).to eq 110
   end
+=begin
 
 
   it 'choca nave con estrella, la nave baja 100 de vida y la estrella baja a 0 de vida' do
