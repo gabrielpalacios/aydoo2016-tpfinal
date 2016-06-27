@@ -130,8 +130,8 @@ describe 'Estrella' do
     expect(estrella2Clon.vida).to eq 0
     expect(estrella2Clon.masa).to eq 100
   end
-=begin
-  it 'Estrella pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+
+  it 'Estrella no le pasa nada al chocar con misil y misil tampoco sufre ningun dano' do
 
     estrella1 = Estrella.new
     misil2 = Misil.new
@@ -142,13 +142,13 @@ describe 'Estrella' do
     misil2Clon.chocar estrella1Clon
 
 
-    expect(estrella1.vida).to eq 50
+    expect(estrella1.vida).to eq 100
     expect(estrella1.masa).to eq 100
     expect(misil2Clon.vida).to eq 100
     expect(misil2Clon.masa).to eq 100
   end
 
-
+=begin
   it 'choca estrella con asteroide, la estrella queda en 0 vida y el asteroide sale ileso' do
 
     estrella1 = Estrella.new
@@ -183,21 +183,21 @@ describe 'Estrella' do
     expect(naveClon.masa).to eq 100
   end
 
-  it 'choca estrella con estrella, la estrella baja 100 de vida y la estrella baja a 0 de vida' do
+  it 'choca estrella con bomba, la estrella baja 100 de vida y la estrella baja a 0 de vida' do
 
     estrella1 = Estrella.new
-    estrella = Estrella.new
+    bomba = Bomba.new
 
     estrella1Clon = estrella1.clone
-    estrellaClon = estrella.clone
+    bombaClon = bomba.clone
 
-    estrella1.chocar estrella
-    estrellaClon.chocar estrella1Clon
+    estrella1.chocar bomba
+    bombaClon.chocar estrella1Clon
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(estrellaClon.vida).to eq 0
-    expect(estrellaClon.masa).to eq 100
+    expect(bombaClon.vida).to eq 0
+    expect(bombaClon.masa).to eq 100
     end
 =end
 end
