@@ -1,0 +1,46 @@
+Informe del Tp Final de Gabriel Palacios en el horario de las 2hs del dia 27/06/2016
+-------------------------------------------------------------------------------------
+
+-Observacion01- Hay mucho codigo comentado, lo cual quita claridad.
+
+-Observacion02- Hay espacios de mas en algunas partes.
+
+-Observacion03- No respeta convenciones de ruby en algunos nombres de metodos y variables. Tampoco esta poniendo parentesis cuando pasa argumentos en algunos metodos. 
+
+-Observacion04- Los clases EfectoVidaFatalidad y EfectoVidaMediaFatalidad no son flexibles, es decir que estan hechos para casos muy particulares. 
+Se podrian juntar en una sola clase, ya que ambas actuan de acuerdo a un porcentaje de destruccion que es indicado, en el ejemplo son 100% y 50%. 
+Con relacion a esto ultimo, en caso de aceptar la sugerencia, el nombre de la clase deberia ser algo distinto, en donde se aclare que se esta
+hablando de una destruccion en cierto porcentaje.
+
+-Observacion05- Seria mas apropiado el nombre EfectoNulo por sobre EfectoNoPasaNada.
+
+-Observacion06- A todos los tipo de Efectos se le tiene que pasar un valor por constructor, pero no todos lo usan.
+
+-Observacion07- En los distintos tipos de elementos del espacio, en el metodo calcularEfecto hay 3 variables, de las cuales se usa solo una. 
+Ademas las otras dos tienen nombres muy confusos: temporalVidaIzq, temporalMasaIzq. Es dificil interpretar que significan.
+
+-Observacion08- En el metodo chocar de todos los tipos de elementos espaciales, el metodo chocar tiene como parametro ObjetoQueChoca, 
+lo que segun lei no seria lo que esta representando. Lo correcto seria objeto_al_que_choca (lo escribo de esta forma, porque es la convencion 
+que se deberia usar)  
+
+-Observacion09- En el metodo calcular(objetoIzquierdo, objetoQueChocaDerecho) los nombres son muy poco claros a la hora de analizar que estan representando.
+
+-Observacion10- Todos los tipo de elementos espaciales tienen el mismo metodo chocar, y el mismo metodo calcularEfecto. Por lo tanto considero que seria mas 
+apropiado subirlo a la clase padre para evitar la repeticion del codigo.
+
+-Observacion11- El metodo calcularEfecto considero que debe ser privado.
+
+-Observacion12- Deberia haber excepciones para algunos casos, como por ejemplo si se quiere chocar contra un elemento inexistente.
+
+-Observacion13- Un elemento espacial no puede tener menos de 0 de vida. Aunque sufra un choque que la cuenta de negativa, se tiene que igualar a 0. 
+En el codigo no se representa eso.
+
+-Observacion14- Los elementos del espacio que esten muertos no pueden interactuar. Falta incorporar eso.
+
+-Observacion15- La solucion de como se sabe que hacer cuando choco a determinado elemento me parece aceptable, debido a que podria extenderse sin tocar lo ya hecho.
+Le cambiaria el nombre del Hash de situacion a situacion_de_choque, para que sea mas especifico, ya que tal vez pueda extenderse en un futuro a 
+nuevas situaciones que no sean el choque.
+La principal desventaja que le veo a esta solucion es que si yo agrego un nuevo tipo de elemento espacial tengo que estar agregandolo en 
+cada tipo de elemento para que lo reconozcan, por lo que tendria que tocar todas las clases. Ademas se puede dar la situacion de que uno lo
+agregue y otro no, por lo que habria una inconsistencia, porque algunos elementos lo conocerian a ese nuevo elemento y otros no.
+
