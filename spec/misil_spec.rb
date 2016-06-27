@@ -128,9 +128,8 @@ describe 'Misil' do
     expect(bomba2Clon.vida).to eq 50
     expect(bomba2Clon.masa).to eq 100
   end
-=begin
 
-  it 'choca misil con asteroide, la misil queda en 0 vida y el asteroide sale ileso' do
+  it 'choca misil con asteroide, al misil no le pasa nada al chocar con el asteroide y el asteroide sale ileso' do
 
     misil1 = Misil.new
     asteroide2 = Asteroide.new
@@ -141,11 +140,12 @@ describe 'Misil' do
     misil1.chocar asteroide2
     asteroide2Clon.chocar misil1Clon
 
-    expect(misil1.vida).to eq 0
+    expect(misil1.vida).to eq 100
     expect(misil1.masa).to eq 100
     expect(asteroide2Clon.vida).to eq 100
     expect(asteroide2Clon.masa).to eq 100
   end
+=begin
 
   it 'choca misil con nave, la misil baja 100 de vida y la nave baja 50 de vida' do
 
