@@ -74,7 +74,7 @@ describe 'Misil' do
     expect(misil1.vida).to eq 200
     expect(misil2.vida).to eq 200
   end
-=begin
+
 
   it 'Misils 1 y 2 de 300 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
@@ -92,19 +92,10 @@ describe 'Misil' do
 
 
 
-  it 'Misil pierde 50 porciento de vida al chocar con misil' do
-
-    misil1 = Misil.new
-    misil2 = Misil.new
-    misil1.chocar misil2
-
-    expect(misil1.vida).to eq 50
-    expect(misil1.masa).to eq 100
-  end
 
   #tests mas completos, como casos reales
 
-  it 'Misils 1 y 2 de 300 pierden 100 de vida mutuamente' do
+  it 'Misiles 1 y 2 de 300 de vida pierden 100 de vida mutuamente' do
 
     misil1 = Misil.new
     misil2 = Misil.new
@@ -121,23 +112,23 @@ describe 'Misil' do
     expect(misil2Clon.masa).to eq 100
   end
 
-  it 'Misil pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
+  it 'Misil no le pasa nada al chocar con bomba y bomba pierde el 50 porciento de su vida' do
 
     misil1 = Misil.new
-    misil2 = Misil.new
+    bomba2 = Bomba.new
     misil1Clon = misil1.clone
-    misil2Clon = misil2.clone
+    bomba2Clon = bomba2.clone
 
-    misil1.chocar misil2
-    misil2Clon.chocar misil1Clon
+    misil1.chocar bomba2
+    bomba2Clon.chocar misil1Clon
 
 
-    expect(misil1.vida).to eq 50
+    expect(misil1.vida).to eq 100
     expect(misil1.masa).to eq 100
-    expect(misil2Clon.vida).to eq 100
-    expect(misil2Clon.masa).to eq 100
+    expect(bomba2Clon.vida).to eq 50
+    expect(bomba2Clon.masa).to eq 100
   end
-
+=begin
 
   it 'choca misil con asteroide, la misil queda en 0 vida y el asteroide sale ileso' do
 
