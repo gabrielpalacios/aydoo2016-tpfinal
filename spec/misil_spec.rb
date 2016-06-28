@@ -6,7 +6,6 @@ require_relative '../model/misil'
 require_relative '../model/bomba'
 require_relative '../model/estrella'
 
-
 describe 'Misil' do
 
   it 'setear vida y masa 100 a una Misil y releer sus valores' do

@@ -98,32 +98,6 @@ describe 'Estrella' do
     expect(estrella1.masa).to eq 100
   end
 
-=begin
-  # it 'Estrella Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Estrella' do
-  #
-  #   estrella1 = Estrella.new
-  #   asteroide2 = Asteroide.new
-  #   estrella1.chocar asteroide2
-  #
-  #   expect(estrella1.masa).to eq 50
-  #   expect(asteroide2.masa).to eq 110
-  # end
-
-  it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con Estrella' do
-
-    estrella1 = Estrella.new
-    asteroide2 = Asteroide.new
-
-    estrella1Clon = estrella1.clone
-    asteroide2Clon = asteroide2.clone
-
-    estrella1.chocar asteroide2
-    asteroide2Clon.chocar estrella1Clon
-
-    expect(asteroide2Clon.masa).to eq 110
-  end
-=end
-
   #tests mas completos, como casos reales
 
   it 'Estrellas 1 y 2 de 300 de vida pierden toda su vida simultaneamente' do

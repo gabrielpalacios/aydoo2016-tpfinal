@@ -1,5 +1,5 @@
 
-class EfectoNoPasaNada
+class EfectoNulo
 
   def initialize(valor)
     @valor = valor

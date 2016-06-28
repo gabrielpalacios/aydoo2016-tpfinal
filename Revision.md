@@ -2,17 +2,23 @@ Informe del Tp Final de Gabriel Palacios en el horario de las 2hs del dia 27/06/
 -------------------------------------------------------------------------------------
 
 -Observacion01- Hay mucho codigo comentado, lo cual quita claridad.
+* Respuesta: Aceptado, deje mucho codigo viejo que utilice en versiones prototipo. Se elimina todo lo innecesario.
 
 -Observacion02- Hay espacios de mas en algunas partes.
+Respuesta: Aceptado,, no le aplique el corrector de indentacion y mejora de codigo. Se le aplica el corrector a todos los archivos de codigo fuente.
 
 -Observacion03- No respeta convenciones de ruby en algunos nombres de metodos y variables. Tampoco esta poniendo parentesis cuando pasa argumentos en algunos metodos. 
+* Respuesta: Aceptado el hecho de usar camelCase en metodos y variables, que a mi me gusta mas, pero no a la comunidad ruby. Lo cambio en todos los fuentes.
+Nota: El uso de parentesis segun vi es opcional en las llamadas a metodos.
 
 -Observacion04- Los clases EfectoVidaFatalidad y EfectoVidaMediaFatalidad no son flexibles, es decir que estan hechos para casos muy particulares. 
 Se podrian juntar en una sola clase, ya que ambas actuan de acuerdo a un porcentaje de destruccion que es indicado, en el ejemplo son 100% y 50%. 
 Con relacion a esto ultimo, en caso de aceptar la sugerencia, el nombre de la clase deberia ser algo distinto, en donde se aclare que se esta
 hablando de una destruccion en cierto porcentaje.
+* Respuesta: Aceptado, tiene toda la razon, no me di cuenta cuando las cree. Lo corrigo utilizando el EfectoVidaReducidaAlPorcentaje
 
 -Observacion05- Seria mas apropiado el nombre EfectoNulo por sobre EfectoNoPasaNada.
+* Respuesta: Se acepta la mejora del nombre para el efecto.
 
 -Observacion06- A todos los tipo de Efectos se le tiene que pasar un valor por constructor, pero no todos lo usan.
 
