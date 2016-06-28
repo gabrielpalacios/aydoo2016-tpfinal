@@ -1,5 +1,6 @@
+require_relative '../model/efecto'
 
-class EfectoCambiaPropiaMasa
+class EfectoCambiaPropiaMasa < Efecto
 
   def initialize(valor)
     @valor = valor

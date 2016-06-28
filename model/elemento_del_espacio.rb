@@ -61,4 +61,16 @@ class ElementoDelEspacio
 
   end
 
+  def agregar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio, efecto_posible)
+    if !@situacion_de_choque.include? nombre_elemento_del_espacio
+      @situacion_de_choque[nombre_elemento_del_espacio] = efecto_posible
+    end
+  end
+
+  def eliminar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio)
+    if @situacion_de_choque.include? nombre_elemento_del_espacio
+      @situacion_de_choque.delete(nombre_elemento_del_espacio)
+    end
+  end
+
 end

@@ -1,5 +1,6 @@
+require_relative '../model/efecto'
 
-class EfectoVidaDestructivo
+class EfectoVidaDestructivo < Efecto
 
   def initialize(valor)
     @valor = valor

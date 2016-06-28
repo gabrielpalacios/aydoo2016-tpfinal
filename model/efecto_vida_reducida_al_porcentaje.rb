@@ -1,4 +1,6 @@
-class EfectoVidaReducidaAlPorcentaje
+require_relative '../model/efecto'
+
+class EfectoVidaReducidaAlPorcentaje < Efecto
 
   def initialize(valor)
     @valor = (valor / 100.0)
