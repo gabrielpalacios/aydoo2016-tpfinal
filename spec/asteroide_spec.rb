@@ -197,5 +197,15 @@ describe 'Asteroide' do
     expect(bombaClon.masa).to eq 100
   end
 
+  it 'choca asteroide con bomba, el asteroide tiene 0 de vida al momento del choque y deberia lanzar la excepcion de objeto espacial muerto' do
+
+    asteroide1 = Asteroide.new
+    bomba = Bomba.new
+    asteroide1.vida = 0
+
+    expect { asteroide1.chocar bomba}.to raise_error(ElementoDelEspacioMuertoError)
+  end
+
+
 end
 

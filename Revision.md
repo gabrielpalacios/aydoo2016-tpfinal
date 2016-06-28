@@ -50,7 +50,7 @@ En el codigo no se representa eso.
 * Respuesta: 
 
 -Observacion14- Los elementos del espacio que esten muertos no pueden interactuar. Falta incorporar eso.
-* Respuesta: 
+* Respuesta: Aceptado, lo incorporo como validacion al momento de hacer el choque. 
 
 -Observacion15- La solucion de como se sabe que hacer cuando choco a determinado elemento me parece aceptable, debido a que podria extenderse sin tocar lo ya hecho.
 Le cambiaria el nombre del Hash de situacion a situacion_de_choque, para que sea mas especifico, ya que tal vez pueda extenderse en un futuro a 

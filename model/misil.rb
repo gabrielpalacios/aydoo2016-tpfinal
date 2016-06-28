@@ -10,13 +10,13 @@ class Misil < ElementoDelEspacio
   def initialize()
     @masa = 100
     @vida = 100
-    @situacion = Hash.new
+    @situacion_de_choque = Hash.new
 
-    @situacion["Nave"] = EfectoVidaDestructivo.new (100)
-    @situacion["Asteroide"] = EfectoNulo.new
-    @situacion["Estrella"] = EfectoNulo.new
-    @situacion["Misil"] = EfectoVidaDestructivo.new (100)
-    @situacion["Bomba"] = EfectoNulo.new
+    @situacion_de_choque["Nave"] = EfectoVidaDestructivo.new (100)
+    @situacion_de_choque["Asteroide"] = EfectoNulo.new
+    @situacion_de_choque["Estrella"] = EfectoNulo.new
+    @situacion_de_choque["Misil"] = EfectoVidaDestructivo.new (100)
+    @situacion_de_choque["Bomba"] = EfectoNulo.new
 
   end
 

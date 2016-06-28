@@ -223,5 +223,13 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     expect(estrellaClon.vida).to eq 0
     expect(estrellaClon.masa).to eq 100
   end
+
+  it 'choca nave con asteroide, la nave tiene 0 de vida al momento del choque y deberia lanzar la excepcion de objeto espacial muerto' do
+
+    nave = Nave.new
+    nave.vida = 0
+    asteroide1 = Asteroide.new
+    expect { nave.chocar asteroide1}.to raise_error(ElementoDelEspacioMuertoError)
+  end
 end
 

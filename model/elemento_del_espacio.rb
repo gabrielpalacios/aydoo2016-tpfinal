@@ -1,3 +1,4 @@
+require_relative '../model/elemento_del_espacio_muerto_error'
 
 class ElementoDelEspacio
 
@@ -18,6 +19,10 @@ class ElementoDelEspacio
     temporalVida = @vida
     temporalMasa = @masa
 
+    if !self.calcularSiEstaVivo || !objetoQueChoca.calcularSiEstaVivo
+      fail ElementoDelEspacioMuertoError.new
+    end
+
     self.calcularEfecto objetoQueChoca, temporalVida, temporalMasa
 
   end
@@ -25,7 +30,7 @@ class ElementoDelEspacio
 
   def calcularEfecto objetoQueChoca, temporalVidaIzq, temporalMasaIzq
 
-    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
+    @situacion_de_choque[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
 
   end
 

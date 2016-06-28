@@ -9,13 +9,13 @@ class Bomba < ElementoDelEspacio
   def initialize()
     @masa = 100
     @vida = 100
-    @situacion = Hash.new
+    @situacion_de_choque = Hash.new
 
-    @situacion["Nave"] = EfectoVidaDestructivo.new(100)
-    @situacion["Asteroide"] = EfectoVidaReducidaAlPorcentaje.new(0)
-    @situacion["Estrella"] = EfectoVidaDestructivo.new(100)
-    @situacion["Misil"] = EfectoVidaReducidaAlPorcentaje.new(50)
-    @situacion["Bomba"] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque["Nave"] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque["Asteroide"] = EfectoVidaReducidaAlPorcentaje.new(0)
+    @situacion_de_choque["Estrella"] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque["Misil"] = EfectoVidaReducidaAlPorcentaje.new(50)
+    @situacion_de_choque["Bomba"] = EfectoVidaDestructivo.new(100)
 
   end
 
