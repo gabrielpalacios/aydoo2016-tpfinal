@@ -8,7 +8,7 @@ class EfectoVidaReducidaAlPorcentaje < Efecto
 
   def calcular(objeto_chocado, objeto_al_que_choca)
     objeto_chocado.vida *= @valor
-    objeto_al_que_choca.vida *= @valor
+    #objeto_al_que_choca.vida *= @valor
   end
 
 end
