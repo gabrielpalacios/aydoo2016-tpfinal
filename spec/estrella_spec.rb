@@ -6,7 +6,6 @@ require_relative '../model/estrella'
 require_relative '../model/misil'
 require_relative '../model/bomba'
 
-
 describe 'Estrella' do
 
   it 'setear vida y masa 100 a una Estrella y releer sus valores' do
@@ -56,7 +55,6 @@ describe 'Estrella' do
     expect(estrella1.vida).to eq 0
   end
 
-
   it 'Estrella 2 tmb pierde 100 de vida al chocar con Estrella 1' do
 
     estrella1 = Estrella.new
@@ -66,7 +64,6 @@ describe 'Estrella' do
     expect(estrella2.vida).to eq 0
   end
 
-
   it 'Estrellas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
     estrella1 = Estrella.new
@@ -75,7 +72,6 @@ describe 'Estrella' do
     expect(estrella1.vida).to eq 0
     expect(estrella2.vida).to eq 0
   end
-
 
   it 'Estrellas 1 y 2 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
@@ -106,34 +102,26 @@ describe 'Estrella' do
     estrella1.vida = 300
     estrella2 = Estrella.new
     estrella2.vida = 300
-    estrella1Clon = estrella1.clone
-    estrella2Clon = estrella2.clone
 
     estrella1.chocar estrella2
-    estrella2Clon.chocar estrella1Clon
-
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(estrella2Clon.vida).to eq 0
-    expect(estrella2Clon.masa).to eq 100
+    expect(estrella2.vida).to eq 0
+    expect(estrella2.masa).to eq 100
   end
 
   it 'Estrella no le pasa nada al chocar con misil y misil tampoco sufre ningun dano' do
 
     estrella1 = Estrella.new
     misil2 = Misil.new
-    estrella1Clon = estrella1.clone
-    misil2Clon = misil2.clone
 
     estrella1.chocar misil2
-    misil2Clon.chocar estrella1Clon
-
 
     expect(estrella1.vida).to eq 100
     expect(estrella1.masa).to eq 100
-    expect(misil2Clon.vida).to eq 100
-    expect(misil2Clon.masa).to eq 100
+    expect(misil2.vida).to eq 100
+    expect(misil2.masa).to eq 100
   end
 
 
@@ -142,34 +130,25 @@ describe 'Estrella' do
     estrella1 = Estrella.new
     asteroide2 = Asteroide.new
 
-    estrella1Clon = estrella1.clone
-    asteroide2Clon = asteroide2.clone
-
     estrella1.chocar asteroide2
-    asteroide2Clon.chocar estrella1Clon
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(asteroide2Clon.vida).to eq 100
-    expect(asteroide2Clon.masa).to eq 100
+    expect(asteroide2.vida).to eq 100
+    expect(asteroide2.masa).to eq 100
   end
-
 
   it 'choca estrella con nave, la estrella baja a 0 de vida y la nave suma toda la vida de la estrella' do
 
     estrella1 = Estrella.new
     nave = Nave.new
 
-    estrella1Clon = estrella1.clone
-    naveClon = nave.clone
-
     estrella1.chocar nave
-    naveClon.chocar estrella1Clon
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(naveClon.vida).to eq 200
-    expect(naveClon.masa).to eq 100
+    expect(nave.vida).to eq 200
+    expect(nave.masa).to eq 100
   end
 
   it 'choca estrella con bomba, la estrella baja a 0 de vida y la bomba baja 100 de vida' do
@@ -177,16 +156,12 @@ describe 'Estrella' do
     estrella1 = Estrella.new
     bomba = Bomba.new
 
-    estrella1Clon = estrella1.clone
-    bombaClon = bomba.clone
-
     estrella1.chocar bomba
-    bombaClon.chocar estrella1Clon
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(bombaClon.vida).to eq 0
-    expect(bombaClon.masa).to eq 100
+    expect(bomba.vida).to eq 0
+    expect(bomba.masa).to eq 100
   end
 
   it 'choca estrella con bomba de 300 de vida, la estrella baja a 0 de vida y la bomba baja 100 de vida' do
@@ -195,16 +170,12 @@ describe 'Estrella' do
     bomba = Bomba.new
     bomba.vida = 300
 
-    estrella1Clon = estrella1.clone
-    bombaClon = bomba.clone
-
     estrella1.chocar bomba
-    bombaClon.chocar estrella1Clon
 
     expect(estrella1.vida).to eq 0
     expect(estrella1.masa).to eq 100
-    expect(bombaClon.vida).to eq 200
-    expect(bombaClon.masa).to eq 100
+    expect(bomba.vida).to eq 200
+    expect(bomba.masa).to eq 100
   end
 
   it 'choca estrella con asteroide, la estrella tiene 0 de vida al momento del choque y deberia lanzar la excepcion de objeto espacial muerto' do

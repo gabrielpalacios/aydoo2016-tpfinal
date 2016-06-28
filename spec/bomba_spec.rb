@@ -47,7 +47,6 @@ describe 'Bomba' do
     expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
-
   it 'Bomba 1 pierde 100 de vida al chocar con Bomba 2' do
     bomba1 = Bomba.new
     bomba2 = Bomba.new
@@ -57,7 +56,6 @@ describe 'Bomba' do
     expect(bomba1.vida).to eq 0
   end
 
-
   it 'Bomba 2 tmb pierde 100 de vida al chocar con Bomba 1' do
 
     bomba1 = Bomba.new
@@ -66,7 +64,6 @@ describe 'Bomba' do
     bomba1.chocar bomba2
     expect(bomba2.vida).to eq 0
   end
-
 
   it 'Bombas 1 y 2 tmb pierde 100 de vida mutuamente controlando ambas vidas' do
 
@@ -88,9 +85,6 @@ describe 'Bomba' do
     expect(bomba2.vida).to eq 200
   end
 
-
-
-
   it 'Bombas 1 y 2 de 300 pierden 100 de vida mutuamente controlando ambas vidas y masas' do
 
     bomba1 = Bomba.new
@@ -104,8 +98,6 @@ describe 'Bomba' do
     expect(bomba1.masa).to eq 100
     expect(bomba2.masa).to eq 100
     end
-
-
 
   it 'Bomba pierde 50 porciento de vida al chocar con misil' do
 
@@ -123,52 +115,40 @@ describe 'Bomba' do
 
     bomba1 = Bomba.new
     bomba2 = Bomba.new
-    bomba1Clon = bomba1.clone
-    bomba2Clon = bomba2.clone
 
     bomba1.chocar bomba2
-    bomba2Clon.chocar bomba1Clon
-
+    bomba2.chocar bomba1
 
     expect(bomba1.vida).to eq 0
     expect(bomba1.masa).to eq 100
-    expect(bomba2Clon.vida).to eq 0
-    expect(bomba2Clon.masa).to eq 100
+    expect(bomba2.vida).to eq 0
+    expect(bomba2.masa).to eq 100
   end
 
   it 'Bomba pierde 50 porciento de vida al chocar con misil y misil no sufre ningun dano' do
 
     bomba1 = Bomba.new
     misil2 = Misil.new
-    bomba1Clon = bomba1.clone
-    misil2Clon = misil2.clone
 
     bomba1.chocar misil2
-    misil2Clon.chocar bomba1Clon
-
-
+    
     expect(bomba1.vida).to eq 50
     expect(bomba1.masa).to eq 100
-    expect(misil2Clon.vida).to eq 100
-    expect(misil2Clon.masa).to eq 100
+    expect(misil2.vida).to eq 100
+    expect(misil2.masa).to eq 100
   end
-
 
   it 'choca bomba con asteroide, la bomba queda en 0 vida y el asteroide sale ileso' do
 
     bomba1 = Bomba.new
     asteroide2 = Asteroide.new
-
-    bomba1Clon = bomba1.clone
-    asteroide2Clon = asteroide2.clone
-
+    
     bomba1.chocar asteroide2
-    asteroide2Clon.chocar bomba1Clon
 
     expect(bomba1.vida).to eq 0
     expect(bomba1.masa).to eq 100
-    expect(asteroide2Clon.vida).to eq 100
-    expect(asteroide2Clon.masa).to eq 100
+    expect(asteroide2.vida).to eq 100
+    expect(asteroide2.masa).to eq 100
   end
 
   it 'choca bomba con nave, la bomba baja 100 de vida y la nave baja 50 de vida' do
@@ -176,16 +156,12 @@ describe 'Bomba' do
     bomba1 = Bomba.new
     nave = Nave.new
 
-    bomba1Clon = bomba1.clone
-    naveClon = nave.clone
-
     bomba1.chocar nave
-    naveClon.chocar bomba1Clon
 
     expect(bomba1.vida).to eq 0
     expect(bomba1.masa).to eq 100
-    expect(naveClon.vida).to eq 50
-    expect(naveClon.masa).to eq 100
+    expect(nave.vida).to eq 50
+    expect(nave.masa).to eq 100
   end
 
   it 'choca bomba con estrella, la bomba baja 100 de vida y la estrella baja a 0 de vida' do
@@ -193,16 +169,12 @@ describe 'Bomba' do
     bomba1 = Bomba.new
     estrella = Estrella.new
 
-    bomba1Clon = bomba1.clone
-    estrellaClon = estrella.clone
-
     bomba1.chocar estrella
-    estrellaClon.chocar bomba1Clon
 
     expect(bomba1.vida).to eq 0
     expect(bomba1.masa).to eq 100
-    expect(estrellaClon.vida).to eq 0
-    expect(estrellaClon.masa).to eq 100
+    expect(estrella.vida).to eq 0
+    expect(estrella.masa).to eq 100
   end
 
   it 'choca bomba con asteroide, la bomba tiene 0 de vida al momento del choque y deberia lanzar la excepcion de objeto espacial muerto' do

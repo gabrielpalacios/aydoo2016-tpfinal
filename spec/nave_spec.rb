@@ -102,28 +102,14 @@ describe 'Nave' do
     expect(nave1.masa).to eq 50
   end
 
-  # it 'nave Disminuye su masa en un valor igual al 50 porciento de la masa del asteroide y asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
-  #
-  #   nave1 = Nave.new
-  #   asteroide2 = Asteroide.new
-  #   nave1.chocar asteroide2
-  #
-  #   expect(nave1.masa).to eq 50
-  #   expect(asteroide2.masa).to eq 110
-  # end
-
   it 'asteroide Aumenta su masa en un valor igual al 10 porciento  de la masa del otro objeto al chocar con nave' do
 
     nave1 = Nave.new
     asteroide2 = Asteroide.new
 
-    nave1Clon = nave1.clone
-    asteroide2Clon = asteroide2.clone
-
     nave1.chocar asteroide2
-    asteroide2Clon.chocar nave1Clon
 
-    expect(asteroide2Clon.masa).to eq 110
+    expect(asteroide2.masa).to eq 110
   end
 
   it 'nave aumenta su vida a 200 porque gana la cantidad de vida de la estrella' do
@@ -135,59 +121,45 @@ describe 'Nave' do
     expect(nave1.vida).to eq 200
   end
 
-
   #tests mas completos, como casos reales
 
 it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
 
     nave1 = Nave.new
     nave2 = Nave.new
-    nave1Clon = nave1.clone
-    nave2Clon = nave2.clone
 
     nave1.chocar nave2
-    nave2Clon.chocar nave1Clon
-
-
+ 
     expect(nave1.vida).to eq 0
     expect(nave1.masa).to eq 100
-    expect(nave2Clon.vida).to eq 0
-    expect(nave2Clon.masa).to eq 100
+    expect(nave2.vida).to eq 0
+    expect(nave2.masa).to eq 100
   end
-
 
  it 'Nave pierde 50 de vida al chocar con bomba y bomba pierde 100 de vida' do
 
     nave1 = Nave.new
     bomba2 = Bomba.new
-    nave1Clon = nave1.clone
-    bomba2Clon = bomba2.clone
 
     nave1.chocar bomba2
-    bomba2Clon.chocar nave1Clon
-
 
     expect(nave1.vida).to eq 50
     expect(nave1.masa).to eq 100
-    expect(bomba2Clon.vida).to eq 0
-    expect(bomba2Clon.masa).to eq 100
+    expect(bomba2.vida).to eq 0
+    expect(bomba2.masa).to eq 100
   end
 
   it 'Nave pierde 80 de vida al chocar con misil y misil pierde 100 de vida' do
 
     nave1 = Nave.new
     misil2 = Misil.new
-    nave1Clon = nave1.clone
-    misil2Clon = misil2.clone
 
     nave1.chocar misil2
-    misil2Clon.chocar nave1Clon
-
 
     expect(nave1.vida).to eq 20
     expect(nave1.masa).to eq 100
-    expect(misil2Clon.vida).to eq 0
-    expect(misil2Clon.masa).to eq 100
+    expect(misil2.vida).to eq 0
+    expect(misil2.masa).to eq 100
   end
 
   it 'choca nave con asteroide, la nave queda en 100 vida y 50 masa y el asteroide gana 10 porciento de masa' do
@@ -195,16 +167,12 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     nave1 = Nave.new
     asteroide2 = Asteroide.new
 
-    nave1Clon = nave1.clone
-    asteroide2Clon = asteroide2.clone
-
     nave1.chocar asteroide2
-    asteroide2Clon.chocar nave1Clon
 
     expect(nave1.vida).to eq 100
     expect(nave1.masa).to eq 50
-    expect(asteroide2Clon.vida).to eq 100
-    expect(asteroide2Clon.masa).to eq 110
+    expect(asteroide2.vida).to eq 100
+    expect(asteroide2.masa).to eq 110
   end
 
   it 'choca nave con estrella, la nave sube 100 de vida y la estrella baja a 0 de vida' do
@@ -212,16 +180,12 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     nave1 = Nave.new
     estrella = Estrella.new
 
-    nave1Clon = nave1.clone
-    estrellaClon = estrella.clone
-
     nave1.chocar estrella
-    estrellaClon.chocar nave1Clon
 
     expect(nave1.vida).to eq 200
     expect(nave1.masa).to eq 100
-    expect(estrellaClon.vida).to eq 0
-    expect(estrellaClon.masa).to eq 100
+    expect(estrella.vida).to eq 0
+    expect(estrella.masa).to eq 100
   end
 
   it 'choca nave con asteroide, la nave tiene 0 de vida al momento del choque y deberia lanzar la excepcion de objeto espacial muerto' do
@@ -243,7 +207,6 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     nave = Nave.new
     expect { nave.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
   end
-
 
   it 'deberia agregarse un nuevo sexto elemento y efecto en nave a las situaciones posibles' do
 
