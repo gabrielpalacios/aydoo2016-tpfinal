@@ -117,7 +117,6 @@ describe 'Bomba' do
     bomba2 = Bomba.new
 
     bomba1.chocar bomba2
-    bomba2.chocar bomba1
 
     expect(bomba1.vida).to eq 0
     expect(bomba1.masa).to eq 100

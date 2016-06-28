@@ -8,6 +8,9 @@ class EfectoCambiaPropiaMasa < Efecto
 
   def calcular(objeto_chocado, objeto_al_que_choca)
     objeto_chocado.masa =  objeto_chocado.masa + (objeto_al_que_choca.masa * @valor)
+    if objeto_chocado.masa < 0
+      objeto_chocado.masa = 0
+    end
 
   end
 
