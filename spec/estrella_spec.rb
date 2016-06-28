@@ -226,5 +226,24 @@ describe 'Estrella' do
     estrella = Estrella.new
     expect { estrella.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
   end
+
+  it 'deberia agregarse un nuevo sexto elemento y efecto en estrella a las situaciones posibles' do
+
+    estrella = Estrella.new
+    estrella.agregar_elemento_espacial_y_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
+
+    cantidad_situacion_de_choques_obtenidos = estrella.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 6
+  end
+
+  it 'deberia eliminarse el elemento nave de las situaciones posibles, quedando 4 situaciones en estrella' do
+
+    estrella = Estrella.new
+    estrella.eliminar_elemento_espacial_y_efecto_posible('Nave')
+
+    cantidad_situacion_de_choques_obtenidos = estrella.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 4
+  end
+
 end
 

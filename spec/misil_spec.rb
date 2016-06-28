@@ -215,5 +215,23 @@ describe 'Misil' do
     expect { misil.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
   end
 
+  it 'deberia agregarse un nuevo sexto elemento y efecto en misil a las situaciones posibles' do
+
+    misil = Misil.new
+    misil.agregar_elemento_espacial_y_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
+
+    cantidad_situacion_de_choques_obtenidos = misil.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 6
+  end
+
+  it 'deberia eliminarse el elemento nave de las situaciones posibles, quedando 4 situaciones en misil' do
+
+    misil = Misil.new
+    misil.eliminar_elemento_espacial_y_efecto_posible('Nave')
+
+    cantidad_situacion_de_choques_obtenidos = misil.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 4
+  end
+
 end
 

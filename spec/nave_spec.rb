@@ -244,5 +244,24 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     expect { nave.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
   end
 
+
+  it 'deberia agregarse un nuevo sexto elemento y efecto en nave a las situaciones posibles' do
+
+    nave = Nave.new
+    nave.agregar_elemento_espacial_y_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
+
+    cantidad_situacion_de_choques_obtenidos = nave.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 6
+  end
+
+  it 'deberia eliminarse el elemento bomba de las situaciones posibles, quedando 4 situaciones en nave' do
+
+    nave = Nave.new
+    nave.eliminar_elemento_espacial_y_efecto_posible('Bomba')
+
+    cantidad_situacion_de_choques_obtenidos = nave.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 4
+  end
+
 end
 

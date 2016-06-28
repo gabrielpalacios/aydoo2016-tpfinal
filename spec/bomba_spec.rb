@@ -225,5 +225,23 @@ describe 'Bomba' do
     expect { bomba.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
   end
 
+  it 'deberia agregarse un nuevo sexto elemento y efecto en bomba a las situaciones posibles' do
+
+    bomba = Bomba.new
+    bomba.agregar_elemento_espacial_y_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
+
+    cantidad_situacion_de_choques_obtenidos = bomba.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 6
+  end
+
+  it 'deberia eliminarse el elemento nave de las situaciones posibles, quedando 4 situaciones en bomba' do
+
+    bomba = Bomba.new
+    bomba.eliminar_elemento_espacial_y_efecto_posible('Nave')
+
+    cantidad_situacion_de_choques_obtenidos = bomba.situacion_de_choque.length
+    expect(cantidad_situacion_de_choques_obtenidos).to eq 4
+  end
+
 end
 
