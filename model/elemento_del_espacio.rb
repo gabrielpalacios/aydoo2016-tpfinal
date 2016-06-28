@@ -4,7 +4,7 @@ require_relative '../model/elemento_del_espacio_vida_negativa_error'
 
 class ElementoDelEspacio
 
-  #attr_accessor :masa, :vida
+  attr_accessor :situacion_de_choque
 
   def masa
     @masa
@@ -67,7 +67,7 @@ class ElementoDelEspacio
     end
   end
 
-  def eliminar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio)
+    def eliminar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio)
     if @situacion_de_choque.include? nombre_elemento_del_espacio
       @situacion_de_choque.delete(nombre_elemento_del_espacio)
     end
