@@ -15,6 +15,7 @@
 /test/version_tmp/
 /tmp/
 /.idea/
+*.stackdump
 
 
 ## Specific to RubyMotion:
