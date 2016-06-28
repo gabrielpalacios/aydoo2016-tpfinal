@@ -28,9 +28,8 @@ Ademas las otras dos tienen nombres muy confusos: temporalVidaIzq, temporalMasaI
 * Respuesta: Aceptado, era un vestigio de codigo viejo, del primer prototipo. Se elimina.
 
 -Observacion08- En el metodo chocar de todos los tipos de elementos espaciales, el metodo chocar tiene como parametro ObjetoQueChoca, 
-lo que segun lei no seria lo que esta representando. Lo correcto seria objeto_al_que_choca (lo escribo de esta forma, porque es la convencion 
-que se deberia usar)  
-* Respuesta: 
+lo que segun lei no seria lo que esta representando. Lo correcto seria objeto_al_que_choca (lo escribo de esta forma, porque es la convencion que se deberia usar)  
+* Respuesta: Aceptado, de hecho aproveho para pasar una inspeccion general a las buenas practicas ruby.
 
 -Observacion09- En el metodo calcular(objetoIzquierdo, objetoQueChocaDerecho) los nombres son muy poco claros a la hora de analizar que estan representando.
 * Respuesta: 

@@ -28,14 +28,14 @@ describe 'Nave' do
     objeto = Nave.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 200 a una Nave y releer sus valores para saber q esta viva' do
     objeto = Nave.new
     objeto.vida = 200
     valorEsperadoVidaYMasa = true
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 50 y masa 0 a una Nave y releer sus valores para saber q esta muerta' do
@@ -43,7 +43,7 @@ describe 'Nave' do
     objeto.vida = 50
     objeto.masa = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'nave 1 pierde 100 de vida al chocar con nave 2' do

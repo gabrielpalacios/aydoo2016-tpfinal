@@ -29,14 +29,14 @@ describe 'Estrella' do
     objeto = Estrella.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 200 a una Estrella y releer sus valores para saber q esta viva' do
     objeto = Estrella.new
     objeto.vida = 200
     valorEsperadoVidaYMasa = true
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 50 y masa 0 a una Estrella y releer sus valores para saber q esta muerta' do
@@ -44,7 +44,7 @@ describe 'Estrella' do
     objeto.vida = 50
     objeto.masa = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'Estrella 1 pierde 100 de vida al chocar con Estrella 2' do

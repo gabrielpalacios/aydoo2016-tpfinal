@@ -32,14 +32,14 @@ describe 'Asteroide' do
     objeto = Asteroide.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 200 a uun asteroidee y releer sus valores para saber q esta vivo' do
     objeto = Asteroide.new
     objeto.vida = 200
     valorEsperadoVidaYMasa = true
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 50 y masa 0 a un Asteroide y releer sus valores para saber q esta muerto' do
@@ -47,7 +47,7 @@ describe 'Asteroide' do
     objeto.vida = 50
     objeto.masa = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
 

@@ -4,33 +4,34 @@ class ElementoDelEspacio
 
   attr_accessor :masa, :vida
 
-  def calcularSiEstaVivo
+  def calcular_si_esta_vivo
 
-    tieneVidaMasa = true
-    if (@masa <= 0 || @vida <= 0)
-      tieneVidaMasa = false
+    tiene_vida_masa = true
+    if @masa <= 0 || @vida <= 0
+      tiene_vida_masa = false
     end
-    return tieneVidaMasa
+    tiene_vida_masa
   end
 
 
-  def chocar objetoQueChoca
-    #guardo los 2 datos temporales previo al choque
-    temporalVida = @vida
-    temporalMasa = @masa
+  def chocar(objeto_al_que_choca)
+    # #guardo los 2 datos temporales previo al choque
+    # temporalVida = @vida
+    # temporalMasa = @masa
 
-    if !self.calcularSiEstaVivo || !objetoQueChoca.calcularSiEstaVivo
+    if !self.calcular_si_esta_vivo || !objeto_al_que_choca.calcular_si_esta_vivo
       fail ElementoDelEspacioMuertoError.new
     end
 
-    self.calcularEfecto objetoQueChoca, temporalVida, temporalMasa
+    self.calcular_efecto objeto_al_que_choca
+    #self.calcular_efecto objeto_al_que_choca, temporalVida, temporalMasa
 
   end
 
 
-  def calcularEfecto objetoQueChoca, temporalVidaIzq, temporalMasaIzq
+  def calcular_efecto(objeto_al_que_choca)
 
-    @situacion_de_choque[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
+    @situacion_de_choque[objeto_al_que_choca.class.name].calcular(self, objeto_al_que_choca)
 
   end
 

@@ -5,9 +5,9 @@ class EfectoVidaDestructivo
     @valor = valor
   end
 
-  def calcular(objetoIzquierdo, objetoQueChocaDerecho)
-    objetoIzquierdo.vida -= @valor
-    objetoQueChocaDerecho.vida -= @valor
+  def calcular(objeto_chocado, objeto_al_que_choca)
+    objeto_chocado.vida -= @valor
+    objeto_al_que_choca.vida -= @valor
   end
 
 end

@@ -6,16 +6,16 @@ require_relative '../model/elemento_del_espacio'
 
 class Bomba < ElementoDelEspacio
 
-  def initialize()
+  def initialize
     @masa = 100
     @vida = 100
     @situacion_de_choque = Hash.new
 
-    @situacion_de_choque["Nave"] = EfectoVidaDestructivo.new(100)
-    @situacion_de_choque["Asteroide"] = EfectoVidaReducidaAlPorcentaje.new(0)
-    @situacion_de_choque["Estrella"] = EfectoVidaDestructivo.new(100)
-    @situacion_de_choque["Misil"] = EfectoVidaReducidaAlPorcentaje.new(50)
-    @situacion_de_choque["Bomba"] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque['Nave'] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque['Asteroide'] = EfectoVidaReducidaAlPorcentaje.new(0)
+    @situacion_de_choque['Estrella'] = EfectoVidaDestructivo.new(100)
+    @situacion_de_choque['Misil'] = EfectoVidaReducidaAlPorcentaje.new(50)
+    @situacion_de_choque['Bomba'] = EfectoVidaDestructivo.new(100)
 
   end
 

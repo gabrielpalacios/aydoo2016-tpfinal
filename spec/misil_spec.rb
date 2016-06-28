@@ -28,14 +28,14 @@ describe 'Misil' do
     objeto = Misil.new
     objeto.vida = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 200 a un Misil y releer sus valores para saber q esta vivo' do
     objeto = Misil.new
     objeto.vida = 200
     valorEsperadoVidaYMasa = true
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'setear vida 50 y masa 0 a un Misil y releer sus valores para saber q esta muerto' do
@@ -43,7 +43,7 @@ describe 'Misil' do
     objeto.vida = 50
     objeto.masa = 0
     valorEsperadoVidaYMasa = false
-    expect(objeto.calcularSiEstaVivo).to eq valorEsperadoVidaYMasa
+    expect(objeto.calcular_si_esta_vivo).to eq valorEsperadoVidaYMasa
   end
 
   it 'Misil 1 pierde 100 de vida al chocar con Misil 2' do
