@@ -201,5 +201,19 @@ describe 'Misil' do
     asteroide1 = Asteroide.new
     expect { misil.chocar asteroide1}.to raise_error(ElementoDelEspacioMuertoError)
   end
+
+
+  it 'deberia lanzar excepcion por asignar vida negativa a misil' do
+
+    misil = Misil.new
+    expect { misil.vida = -1}.to raise_error(ElementoDelEspacioVidaNegativaError)
+  end
+
+  it 'deberia lanzar excepcion por asignar masa negativa a misil' do
+
+    misil = Misil.new
+    expect { misil.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
+  end
+
 end
 

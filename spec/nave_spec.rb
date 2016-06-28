@@ -231,5 +231,18 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     asteroide1 = Asteroide.new
     expect { nave.chocar asteroide1}.to raise_error(ElementoDelEspacioMuertoError)
   end
+
+  it 'deberia lanzar excepcion por asignar vida negativa a nave' do
+
+    nave = Nave.new
+    expect { nave.vida = -1}.to raise_error(ElementoDelEspacioVidaNegativaError)
+  end
+
+  it 'deberia lanzar excepcion por asignar masa negativa a nave' do
+
+    nave = Nave.new
+    expect { nave.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
+  end
+
 end
 

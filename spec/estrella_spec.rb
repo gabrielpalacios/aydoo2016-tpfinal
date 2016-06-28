@@ -214,5 +214,17 @@ describe 'Estrella' do
     asteroide1 = Asteroide.new
     expect { estrella.chocar asteroide1}.to raise_error(ElementoDelEspacioMuertoError)
   end
+
+  it 'deberia lanzar excepcion por asignar vida negativa a estrella' do
+
+    estrella = Estrella.new
+    expect { estrella.vida = -1}.to raise_error(ElementoDelEspacioVidaNegativaError)
+  end
+
+  it 'deberia lanzar excepcion por asignar masa negativa a estrella' do
+
+    estrella = Estrella.new
+    expect { estrella.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
+  end
 end
 

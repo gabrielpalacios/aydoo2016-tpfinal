@@ -29,10 +29,10 @@ Ademas las otras dos tienen nombres muy confusos: temporalVidaIzq, temporalMasaI
 
 -Observacion08- En el metodo chocar de todos los tipos de elementos espaciales, el metodo chocar tiene como parametro ObjetoQueChoca, 
 lo que segun lei no seria lo que esta representando. Lo correcto seria objeto_al_que_choca (lo escribo de esta forma, porque es la convencion que se deberia usar)  
-* Respuesta: Aceptado, de hecho aproveho para pasar una inspeccion general a las buenas practicas ruby.
+* Respuesta: Aceptado, de hecho aprobecho para pasar una inspeccion general a las buenas practicas ruby.
 
 -Observacion09- En el metodo calcular(objetoIzquierdo, objetoQueChocaDerecho) los nombres son muy poco claros a la hora de analizar que estan representando.
-* Respuesta: 
+* Respuesta: Aceptado. Se hizo refactor de nombres de metodos y objetos.
 
 -Observacion10- Todos los tipo de elementos espaciales tienen el mismo metodo chocar, y el mismo metodo calcularEfecto. Por lo tanto considero que seria mas 
 apropiado subirlo a la clase padre para evitar la repeticion del codigo.
@@ -46,7 +46,7 @@ apropiado subirlo a la clase padre para evitar la repeticion del codigo.
 
 -Observacion13- Un elemento espacial no puede tener menos de 0 de vida. Aunque sufra un choque que la cuenta de negativa, se tiene que igualar a 0. 
 En el codigo no se representa eso.
-* Respuesta: 
+* Respuesta: Aceptado, se me ocurre reemplazar los attr_accessor de clase ElementoDelEspacio por getter y setter habituales, contemplando el chequeo de negatividad tanto para vida como masa en la misma asignacion. Se crean dos excepciones para ello.
 
 -Observacion14- Los elementos del espacio que esten muertos no pueden interactuar. Falta incorporar eso.
 * Respuesta: Aceptado, lo incorporo como validacion al momento de hacer el choque. 

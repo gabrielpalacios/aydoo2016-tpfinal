@@ -213,5 +213,17 @@ describe 'Bomba' do
     expect { bomba.chocar asteroide1}.to raise_error(ElementoDelEspacioMuertoError)
   end
 
+  it 'deberia lanzar excepcion por asignar vida negativa a bomba' do
+
+    bomba = Bomba.new
+    expect { bomba.vida = -1}.to raise_error(ElementoDelEspacioVidaNegativaError)
+  end
+
+  it 'deberia lanzar excepcion por asignar masa negativa a bomba' do
+
+    bomba = Bomba.new
+    expect { bomba.masa = -1}.to raise_error(ElementoDelEspacioMasaNegativaError)
+  end
+
 end
 

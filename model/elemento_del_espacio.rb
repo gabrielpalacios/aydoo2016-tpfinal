@@ -1,8 +1,34 @@
 require_relative '../model/elemento_del_espacio_muerto_error'
+require_relative '../model/elemento_del_espacio_masa_negativa_error'
+require_relative '../model/elemento_del_espacio_vida_negativa_error'
 
 class ElementoDelEspacio
 
-  attr_accessor :masa, :vida
+  #attr_accessor :masa, :vida
+
+  def masa
+    @masa
+  end
+
+  def masa=(valor)
+    if valor >= 0
+      @masa = valor
+    else
+      fail ElementoDelEspacioMasaNegativaError.new
+    end
+  end
+
+  def vida
+    @vida
+  end
+
+  def vida=(valor)
+    if valor >= 0
+      @vida = valor
+    else
+      fail ElementoDelEspacioVidaNegativaError.new
+    end
+  end
 
   def calcular_si_esta_vivo
 
