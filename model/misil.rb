@@ -13,26 +13,12 @@ class Misil < ElementoDelEspacio
     @situacion = Hash.new
 
     @situacion["Nave"] = EfectoVidaDestructivo.new (100)
-    @situacion["Asteroide"] = EfectoNulo.new (0)
-    @situacion["Estrella"] = EfectoNulo.new (0)
+    @situacion["Asteroide"] = EfectoNulo.new
+    @situacion["Estrella"] = EfectoNulo.new
     @situacion["Misil"] = EfectoVidaDestructivo.new (100)
-    @situacion["Bomba"] = EfectoNulo.new (0)
+    @situacion["Bomba"] = EfectoNulo.new
 
   end
 
-  def chocar objetoQueChoca
-    #guardo los 2 datos temporales previo al choque
-    temporalVida = @vida
-    temporalMasa = @masa
-
-    self.calcularEfecto objetoQueChoca, temporalVida, temporalMasa
-
-  end
-
-  def calcularEfecto objetoQueChoca, temporalVidaIzq, temporalMasaIzq
-
-    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
-
-  end
 
 end

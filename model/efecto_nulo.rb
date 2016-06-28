@@ -1,10 +1,6 @@
 
 class EfectoNulo
 
-  def initialize(valor)
-    @valor = valor
-  end
-
   def calcular(objetoIzquierdo, objetoQueChocaDerecho)
 
   end

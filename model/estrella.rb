@@ -14,24 +14,10 @@ class Estrella < ElementoDelEspacio
     @situacion["Nave"] = EfectoVidaReducidaAlPorcentaje.new (0)
     @situacion["Asteroide"] = EfectoVidaReducidaAlPorcentaje.new (0)
     @situacion["Estrella"] = EfectoVidaReducidaAlPorcentaje.new (0)
-    @situacion["Misil"] = EfectoNulo.new (0)
+    @situacion["Misil"] = EfectoNulo.new
     @situacion["Bomba"] = EfectoVidaReducidaAlPorcentaje.new (0)
 
   end
 
-  def chocar objetoQueChoca
-    #guardo los 2 datos temporales previo al choque
-    temporalVida = @vida
-    temporalMasa = @masa
-
-    self.calcularEfecto objetoQueChoca, temporalVida, temporalMasa
-
-  end
-
-  def calcularEfecto objetoQueChoca, temporalVidaIzq, temporalMasaIzq
-
-    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
-
-  end
 
 end

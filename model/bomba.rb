@@ -19,19 +19,5 @@ class Bomba < ElementoDelEspacio
 
   end
 
-  def chocar objetoQueChoca
-    #guardo los 2 datos temporales previo al choque
-    temporalVida = @vida
-    temporalMasa = @masa
-
-    self.calcularEfecto objetoQueChoca, temporalVida, temporalMasa
-
-  end
-
-  def calcularEfecto objetoQueChoca, temporalVidaIzq, temporalMasaIzq
-
-
-    @situacion[objetoQueChoca.class.name].calcular(self, objetoQueChoca)
-  end
 
 end
