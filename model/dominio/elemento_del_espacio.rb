@@ -71,4 +71,9 @@ class ElementoDelEspacio
       @situacion_de_choque.delete(nombre_elemento_del_espacio)
     end
   end
+
+  def agregar_a_situacion_de_choque (clase, efecto)
+    @situacion_de_choque.store(clase,efecto)
+  end
+
 end

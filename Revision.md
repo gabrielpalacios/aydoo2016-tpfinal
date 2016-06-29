@@ -58,7 +58,11 @@ La principal desventaja que le veo a esta solucion es que si yo agrego un nuevo 
 cada tipo de elemento para que lo reconozcan, por lo que tendria que tocar todas las clases. Ademas se puede dar la situacion de que uno lo
 agregue y otro no, por lo que habria una inconsistencia, porque algunos elementos lo conocerian a ese nuevo elemento y otros no.
 * Respuesta: Aceptado, se cambio el nombre. La sugerencia de extension me gusta mucho.
-Tengo en carpeta ese cambio.
+Se ha corroborado que el nuevo metodo en ElementoDelEspacio, agregar_elemento_espacial_junto_a_efecto_posible
+sirve y funciona correctamente para este fin. Se hizo la prueba con un nuevo elemento, Supernova.
+Lo que se tiene que hacer es (antes de chocar ambos elementos) agregar en tiempo de ejecucion el comportamiento esperado a la clase anterior, por ejemplo:
+supernova = Supernova.new (esta nueva clase va a tener que heredar de ElementoDelEspacio y tener su constructor)
+asteroide.agregar_elemento_espacial_junto_a_efecto_posible('Supernova',EfectoNulo.new)
 
 ##Segunda parte revision de codigo. Martes 28 2:10 horas
 
@@ -77,7 +81,7 @@ class MyCrazyError < StandardError
 end"
 
 -Observacion 17: Los distintos tipo de ObjetoEspacial no tienen metodos, solo tienen el constructor.
-* Respuesta: Viendo la observacion...
+* Respuesta: Aceptado, pero por mas que intente, no veo la necesidad de agregar nada, ya que solo utilizo el constructor para pre cargar todos los efectos conocidos de choques, por ahora solo eso es necesario.
 
 -Observacion 18: Las clases estan sueltas en una unica carpeta. Se podrian agrupar segun algun criterio para facilitar su comprension.
 * Respuesta: Aceptado, se crean subcarpetas de dominio, efectos y excepciones
@@ -101,4 +105,4 @@ Lo que significa que Ruby no soporta el clonado o duplicado de variables tipo nu
 		-En el efecto EfectoCambiaPropiaMasa el valor deberia ser un float, ya que en el codigo se usa de esa forma. 
 		-Falta el atributo situacion_de_choque
 		-Aclaracion: a pesar de que ruby es un lenguaje en el que no se aclaran los tipos, y que estos haya que ponerlos debido a que 			el astah te obliga a poner cosas pertenecientes a los lenguajes tipados, pienso entonces que en el tipo que te obliga a poner 			el astah se indique que tipo de clase es el que esperamos que este en ese lugar. 
-
+* Respuesta: Aceptadas y corregidas las observaciones.
