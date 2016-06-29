@@ -1,8 +1,8 @@
-require_relative '../model/efecto_cambia_propia_masa'
-require_relative '../model/efecto_vida_destructivo'
-require_relative '../model/efecto_vida_reducida_al_porcentaje'
-require_relative '../model/efecto_nulo'
-require_relative '../model/elemento_del_espacio'
+require_relative '../efectos/efecto_cambia_propia_masa'
+require_relative '../efectos/efecto_vida_destructivo'
+require_relative '../efectos/efecto_vida_reducida_al_porcentaje'
+require_relative '../efectos/efecto_nulo'
+require_relative '../dominio/elemento_del_espacio'
 
 class Asteroide < ElementoDelEspacio
 

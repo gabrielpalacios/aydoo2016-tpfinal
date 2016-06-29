@@ -68,18 +68,32 @@ Tengo en carpeta ese cambio.
 *105 tests. Cobertura: 99.72%
 
 -Observacion 16: Seria mas conveniente trabajar con Exceptions por sobre Errors. Esto es debido a que un Error es para indicar un problema serio del programa.
+* Respuesta: Rechazado, no lo cambio ya que recibimos la guia de usar la convencion RSpec
+del link https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher
+Y para sumar al respecto, me fije tambien en http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/
+donde se indica como usar las propias excepciones:
+"update: Several people have pointed out, in the comments that inheriting from Exception directly is a big no-no when creating custom exceptions. You should instead inherit from StandardError. This is because exceptions that inherit from StandardError deal with application level errors, while if you inherit Exception directly you risk catching errors to do with the environment. Also the convention is to end your exceptions with the word Error rather than exceptions e.g.:
+class MyCrazyError < StandardError
+end"
 
 -Observacion 17: Los distintos tipo de ObjetoEspacial no tienen metodos, solo tienen el constructor.
+* Respuesta: Viendo la observacion...
 
 -Observacion 18: Las clases estan sueltas en una unica carpeta. Se podrian agrupar segun algun criterio para facilitar su comprension.
+* Respuesta: Aceptado, se crean subcarpetas de dominio, efectos y excepciones
 
 -Observacion 19: En ElementoDelEspacio podria usarse el attr_reader en vida y masa, en vez de escribir un metodo para obtenerlos.
+* Respuesta: Rechazado, de hecho lo tenia antes y lo deje de usar para poder agregar la validacion de carga tanto de vida como de masa en el setter de cada uno.
 
 -Observacion 20: En el metodo chocar de ElementoEspacial cuando guardas la vida temporal y la masa temporal, y lo igualas a @vida y @masa, puede que tengas un problema. Esto es porque cuando en Ruby haces la operacion del igual (=) lo que hace es que apuntes a la direccion de memoria en la que esta lo del lado derecho de la igualdad, por lo que si la @vida o @masa cambian su valor, tambien lo van a hacer la vida y masa temporal. Entonces para esos casos me fue util el .clone. En codigo seria: temporal_vida = @vida.clone
+* Respuesta: Rechazado, no se permite el clonado de este atributo, sale "TypeError: can't clone Fixnum"
+Lo que significa que Ruby no soporta el clonado o duplicado de variables tipo numerico y boolean.
 
 -Observacion 21: Los metodos agregar_elemento_espacial_y_efecto_posible y eliminar_elemento_espacial_y_efecto_posible tienen smell, ya que a priori dan a entender que tienen mas de una responsabilidad. Aunque viendo en mayor detalle el metodo tiene una sola responsabilidad. Lo que causa ese smell es el nombre. Yo le cambiaria el "y" por algo como "junto_a" por ejemplo.
+* Respuesta: Aceptada la sugerencia, es mas claro ahora, se realizo el cambio de nombre.
 
 -Observacion 22: Cada vez que se ejecuta el metodo chocar, se crea un nuevo objeto: "objeto_temporal_pre_choque = (self.class).new" lo cual no me parece correcto por un tema de memoria.
+* Respuesta: Rechazado, por una decision de diseno, necesito que no solo guarde los atributos del objeto antes del choque, sino que tambien necesito su tipo de objeto, ya que se tiene que adaptar el metodo chocar, a el choque de cualquier tipo de objeto. Ese objeto temporal es necesario para poder comparar la variacion de sus atributos (originales) que tiene al chocar.
 
 -Observacion 23: Observaciones del diagrama de clases:
 		-En todos los efectos cuando se pone en el parametro objeto_chocado o objeto_al_que_choca se lo señala como int cuando son 			ElementoDelEspacio (ver que se repite en otras partes tambien). Esos nombres son incorrectos, ya que objeto_chocado y 			objeto_al_que_choca significan lo mismo.

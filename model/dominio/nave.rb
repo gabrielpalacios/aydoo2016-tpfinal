@@ -1,7 +1,7 @@
-require_relative '../model/efecto_cambia_propia_masa'
-require_relative '../model/efecto_vida_destructivo'
-require_relative '../model/efecto_aumenta_propia_vida'
-require_relative '../model/elemento_del_espacio'
+require_relative '../efectos/efecto_cambia_propia_masa'
+require_relative '../efectos/efecto_vida_destructivo'
+require_relative '../efectos/efecto_aumenta_propia_vida'
+require_relative '../dominio/elemento_del_espacio'
 
 class Nave < ElementoDelEspacio
 

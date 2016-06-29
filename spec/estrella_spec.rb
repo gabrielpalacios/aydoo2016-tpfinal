@@ -1,10 +1,10 @@
 require 'rspec'
 require 'spec_helper'
-require_relative '../model/nave'
-require_relative '../model/asteroide'
-require_relative '../model/estrella'
-require_relative '../model/misil'
-require_relative '../model/bomba'
+require_relative '../model/dominio/nave'
+require_relative '../model/dominio/asteroide'
+require_relative '../model/dominio/estrella'
+require_relative '../model/dominio/misil'
+require_relative '../model/dominio/bomba'
 
 describe 'Estrella' do
 
@@ -200,7 +200,7 @@ describe 'Estrella' do
   it 'deberia agregarse un nuevo sexto elemento y efecto en estrella a las situaciones posibles' do
 
     estrella = Estrella.new
-    estrella.agregar_elemento_espacial_y_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
+    estrella.agregar_elemento_espacial_junto_a_efecto_posible('Supernova', EfectoVidaDestructivo.new(10))
 
     cantidad_situacion_de_choques_obtenidos = estrella.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 6
@@ -209,7 +209,7 @@ describe 'Estrella' do
   it 'deberia eliminarse el elemento nave de las situaciones posibles, quedando 4 situaciones en estrella' do
 
     estrella = Estrella.new
-    estrella.eliminar_elemento_espacial_y_efecto_posible('Nave')
+    estrella.eliminar_elemento_espacial_junto_a_efecto_posible('Nave')
 
     cantidad_situacion_de_choques_obtenidos = estrella.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 4

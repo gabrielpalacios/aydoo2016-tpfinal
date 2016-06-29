@@ -1,6 +1,6 @@
-require_relative '../model/elemento_del_espacio_muerto_error'
-require_relative '../model/elemento_del_espacio_masa_negativa_error'
-require_relative '../model/elemento_del_espacio_vida_negativa_error'
+require_relative '../excepciones/elemento_del_espacio_muerto_error'
+require_relative '../excepciones/elemento_del_espacio_masa_negativa_error'
+require_relative '../excepciones/elemento_del_espacio_vida_negativa_error'
 
 class ElementoDelEspacio
 
@@ -60,13 +60,13 @@ class ElementoDelEspacio
     @situacion_de_choque[objeto_al_que_choca.class.name].calcular(self, objeto_al_que_choca)
   end
 
-  def agregar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio, efecto_posible)
-    if !@situacion_de_choque.include? nombre_elemento_del_espacio
+  def agregar_elemento_espacial_junto_a_efecto_posible(nombre_elemento_del_espacio, efecto_posible)
+    unless @situacion_de_choque.include? nombre_elemento_del_espacio
       @situacion_de_choque[nombre_elemento_del_espacio] = efecto_posible
     end
   end
 
-  def eliminar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio)
+  def eliminar_elemento_espacial_junto_a_efecto_posible(nombre_elemento_del_espacio)
     if @situacion_de_choque.include? nombre_elemento_del_espacio
       @situacion_de_choque.delete(nombre_elemento_del_espacio)
     end

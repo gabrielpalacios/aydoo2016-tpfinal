@@ -1,4 +1,4 @@
-require_relative '../model/efecto'
+require_relative '../efectos/efecto'
 
 class EfectoVidaDestructivo < Efecto
 
