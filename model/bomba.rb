@@ -16,8 +16,5 @@ class Bomba < ElementoDelEspacio
     @situacion_de_choque['Estrella'] = EfectoVidaDestructivo.new(100)
     @situacion_de_choque['Misil'] = EfectoVidaReducidaAlPorcentaje.new(50)
     @situacion_de_choque['Bomba'] = EfectoVidaDestructivo.new(100)
-
   end
-
-
 end

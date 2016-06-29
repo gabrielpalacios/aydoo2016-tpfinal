@@ -55,7 +55,6 @@ describe 'Misil' do
     expect(misil1.vida).to eq 0
   end
 
-
   it 'Misil 2 tmb pierde 100 de vida al chocar con Misil 1' do
 
     misil1 = Misil.new
@@ -140,7 +139,6 @@ describe 'Misil' do
     expect(asteroide2.masa).to eq 100
   end
 
-
   it 'choca misil con nave, el misil baja 100 de vida y la nave baja 80 de vida' do
 
     misil1 = Misil.new
@@ -205,6 +203,4 @@ describe 'Misil' do
     cantidad_situacion_de_choques_obtenidos = misil.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 4
   end
-
 end
-

@@ -124,7 +124,6 @@ describe 'Estrella' do
     expect(misil2.masa).to eq 100
   end
 
-
   it 'choca estrella con asteroide, la estrella queda en 0 vida y el asteroide sale ileso' do
 
     estrella1 = Estrella.new
@@ -215,6 +214,4 @@ describe 'Estrella' do
     cantidad_situacion_de_choques_obtenidos = estrella.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 4
   end
-
 end
-

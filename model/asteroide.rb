@@ -17,9 +17,5 @@ class Asteroide < ElementoDelEspacio
 
     @situacion_de_choque['Misil'] = EfectoNulo.new
     @situacion_de_choque['Bomba'] = EfectoNulo.new
-
   end
-
-
-
 end

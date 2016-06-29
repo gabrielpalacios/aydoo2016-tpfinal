@@ -39,7 +39,6 @@ class ElementoDelEspacio
     tiene_vida_masa
   end
 
-
   def chocar(objeto_al_que_choca)
     # guardo los 2 datos temporales previo al choque
     temporal_vida = @vida
@@ -54,14 +53,11 @@ class ElementoDelEspacio
     objeto_temporal_pre_choque.masa = temporal_masa
     @situacion_de_choque[objeto_al_que_choca.class.name].calcular(self, objeto_al_que_choca)
     objeto_al_que_choca.calcular_efecto(objeto_temporal_pre_choque)
-
   end
-
 
   def calcular_efecto(objeto_al_que_choca)
 
     @situacion_de_choque[objeto_al_que_choca.class.name].calcular(self, objeto_al_que_choca)
-
   end
 
   def agregar_elemento_espacial_y_efecto_posible(nombre_elemento_del_espacio, efecto_posible)
@@ -75,5 +71,4 @@ class ElementoDelEspacio
       @situacion_de_choque.delete(nombre_elemento_del_espacio)
     end
   end
-
 end

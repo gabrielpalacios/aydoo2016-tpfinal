@@ -225,6 +225,4 @@ it 'Naves 1 y 2 de 100 de vida pierden 100 de vida mutuamente' do
     cantidad_situacion_de_choques_obtenidos = nave.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 4
   end
-
 end
-

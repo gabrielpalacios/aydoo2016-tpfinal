@@ -11,7 +11,5 @@ class EfectoVidaDestructivo < Efecto
     if objeto_chocado.vida < 0
       objeto_chocado.vida = 0
     end
-      #objeto_al_que_choca.vida -= @valor
   end
-
 end

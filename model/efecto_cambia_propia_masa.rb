@@ -11,7 +11,5 @@ class EfectoCambiaPropiaMasa < Efecto
     if objeto_chocado.masa < 0
       objeto_chocado.masa = 0
     end
-
   end
-
 end

@@ -42,7 +42,7 @@ apropiado subirlo a la clase padre para evitar la repeticion del codigo.
 * Respuesta: Rechazado, no puede serlo ya que se llama desde chocar, y debe ser publico para que su visibilidad sea valida, porque se llama desde self.calcularEfecto, donde self es cualquier instancia de objeto del espacio que se cree.
 
 -Observacion12- Deberia haber excepciones para algunos casos, como por ejemplo si se quiere chocar contra un elemento inexistente.
-* Respuesta: 
+* Respuesta: Aceptado, pero se deja para implementar como prioridad baja.
 
 -Observacion13- Un elemento espacial no puede tener menos de 0 de vida. Aunque sufra un choque que la cuenta de negativa, se tiene que igualar a 0. 
 En el codigo no se representa eso.
@@ -57,5 +57,34 @@ nuevas situaciones que no sean el choque.
 La principal desventaja que le veo a esta solucion es que si yo agrego un nuevo tipo de elemento espacial tengo que estar agregandolo en 
 cada tipo de elemento para que lo reconozcan, por lo que tendria que tocar todas las clases. Ademas se puede dar la situacion de que uno lo
 agregue y otro no, por lo que habria una inconsistencia, porque algunos elementos lo conocerian a ese nuevo elemento y otros no.
-* Respuesta: 
+* Respuesta: Aceptado, se cambio el nombre. La sugerencia de extension me gusta mucho.
+Tengo en carpeta ese cambio.
+
+##Segunda parte revision de codigo. Martes 28 2:10 horas
+
+##Revisor: Fernando Gainey
+##Revisado: Gabriel Palacios
+
+*105 tests. Cobertura: 99.72%
+
+-Observacion 16: Seria mas conveniente trabajar con Exceptions por sobre Errors. Esto es debido a que un Error es para indicar un problema serio del programa.
+
+-Observacion 17: Los distintos tipo de ObjetoEspacial no tienen metodos, solo tienen el constructor.
+
+-Observacion 18: Las clases estan sueltas en una unica carpeta. Se podrian agrupar segun algun criterio para facilitar su comprension.
+
+-Observacion 19: En ElementoDelEspacio podria usarse el attr_reader en vida y masa, en vez de escribir un metodo para obtenerlos.
+
+-Observacion 20: En el metodo chocar de ElementoEspacial cuando guardas la vida temporal y la masa temporal, y lo igualas a @vida y @masa, puede que tengas un problema. Esto es porque cuando en Ruby haces la operacion del igual (=) lo que hace es que apuntes a la direccion de memoria en la que esta lo del lado derecho de la igualdad, por lo que si la @vida o @masa cambian su valor, tambien lo van a hacer la vida y masa temporal. Entonces para esos casos me fue util el .clone. En codigo seria: temporal_vida = @vida.clone
+
+-Observacion 21: Los metodos agregar_elemento_espacial_y_efecto_posible y eliminar_elemento_espacial_y_efecto_posible tienen smell, ya que a priori dan a entender que tienen mas de una responsabilidad. Aunque viendo en mayor detalle el metodo tiene una sola responsabilidad. Lo que causa ese smell es el nombre. Yo le cambiaria el "y" por algo como "junto_a" por ejemplo.
+
+-Observacion 22: Cada vez que se ejecuta el metodo chocar, se crea un nuevo objeto: "objeto_temporal_pre_choque = (self.class).new" lo cual no me parece correcto por un tema de memoria.
+
+-Observacion 23: Observaciones del diagrama de clases:
+		-En todos los efectos cuando se pone en el parametro objeto_chocado o objeto_al_que_choca se lo señala como int cuando son 			ElementoDelEspacio (ver que se repite en otras partes tambien). Esos nombres son incorrectos, ya que objeto_chocado y 			objeto_al_que_choca significan lo mismo.
+		-En los efectos que se usa el initialize para recibir algun dato deberia estar indicado en el diagrama su uso.
+		-En el efecto EfectoCambiaPropiaMasa el valor deberia ser un float, ya que en el codigo se usa de esa forma. 
+		-Falta el atributo situacion_de_choque
+		-Aclaracion: a pesar de que ruby es un lenguaje en el que no se aclaran los tipos, y que estos haya que ponerlos debido a que 			el astah te obliga a poner cosas pertenecientes a los lenguajes tipados, pienso entonces que en el tipo que te obliga a poner 			el astah se indique que tipo de clase es el que esperamos que este en ese lugar. 
 

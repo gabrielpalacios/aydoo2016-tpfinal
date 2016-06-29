@@ -3,7 +3,6 @@ require_relative '../model/efecto_vida_destructivo'
 require_relative '../model/efecto_aumenta_propia_vida'
 require_relative '../model/elemento_del_espacio'
 
-
 class Nave < ElementoDelEspacio
 
   def initialize
@@ -16,7 +15,5 @@ class Nave < ElementoDelEspacio
     @situacion_de_choque['Estrella'] = EfectoAumentaPropiaVida.new
     @situacion_de_choque['Misil'] = EfectoVidaDestructivo.new (80)
     @situacion_de_choque['Bomba'] = EfectoVidaDestructivo.new (50)
-
   end
-
 end

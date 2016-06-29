@@ -16,8 +16,5 @@ class Estrella < ElementoDelEspacio
     @situacion_de_choque['Estrella'] = EfectoVidaReducidaAlPorcentaje.new (0)
     @situacion_de_choque['Misil'] = EfectoNulo.new
     @situacion_de_choque['Bomba'] = EfectoVidaReducidaAlPorcentaje.new (0)
-
   end
-
-
 end

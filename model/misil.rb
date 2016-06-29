@@ -4,7 +4,6 @@ require_relative '../model/efecto_vida_reducida_al_porcentaje'
 require_relative '../model/efecto_nulo'
 require_relative '../model/elemento_del_espacio'
 
-
 class Misil < ElementoDelEspacio
 
   def initialize
@@ -17,8 +16,5 @@ class Misil < ElementoDelEspacio
     @situacion_de_choque['Estrella'] = EfectoNulo.new
     @situacion_de_choque['Misil'] = EfectoVidaDestructivo.new (100)
     @situacion_de_choque['Bomba'] = EfectoNulo.new
-
   end
-
-
 end

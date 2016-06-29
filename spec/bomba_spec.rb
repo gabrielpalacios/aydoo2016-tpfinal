@@ -6,7 +6,6 @@ require_relative '../model/bomba'
 require_relative '../model/misil'
 require_relative '../model/estrella'
 
-
 describe 'Bomba' do
 
   it 'setear vida y masa 100 a una Bomba y releer sus valores' do
@@ -97,7 +96,7 @@ describe 'Bomba' do
 
     expect(bomba1.masa).to eq 100
     expect(bomba2.masa).to eq 100
-    end
+  end
 
   it 'Bomba pierde 50 porciento de vida al chocar con misil' do
 
@@ -213,6 +212,4 @@ describe 'Bomba' do
     cantidad_situacion_de_choques_obtenidos = bomba.situacion_de_choque.length
     expect(cantidad_situacion_de_choques_obtenidos).to eq 4
   end
-
 end
-
